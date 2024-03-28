@@ -1,12 +1,26 @@
 <script setup lang="ts">
 import {
-	defineExpose,
+	inject,
+	onMounted,
+	onUnmounted,
 	ref,
+	watch,
 } from "vue";
 import type {
 	Ref,
 } from "vue";
 import { echarts } from "../plugins/echarts";
+
+import {
+	register_resource,
+	deregister_resource,
+} from "../lib/ResourceManager";
+
+// We know that this is defined in the root component,
+// and we won't use this component alone. XXX
+const dark_mode = inject<Ref<boolean>>("dark_mode")!;
+
+const section_id = "signal-analog-digital";
 
 const refChartAnalog:   Ref<HTMLDivElement | null> = ref(null);
 const refChartDigitalI: Ref<HTMLDivElement | null> = ref(null);
@@ -16,6 +30,8 @@ let chartAnalog:   echarts.ECharts | null;
 let chartDigitalI: echarts.ECharts | null;
 let chartDigitalR: echarts.ECharts | null;
 
+let inited = false;
+
 function delete_charts() {
 	if (chartAnalog)   chartAnalog.dispose();
 	if (chartDigitalI) chartDigitalI.dispose();
@@ -24,12 +40,16 @@ function delete_charts() {
 	chartAnalog   = null;
 	chartDigitalI = null;
 	chartDigitalR = null;
+
+	inited = false;
 }
 
-function init_charts(dark_mode: boolean = false) {
+function init_charts() {
 	delete_charts();
 
-	chartAnalog = echarts.init(refChartAnalog.value!, dark_mode ? 'dark' : '');
+	inited = true;
+
+	chartAnalog = echarts.init(refChartAnalog.value!, dark_mode.value ? 'dark' : '');
 	chartAnalog.setOption({
 		title: {
 			text: 'Analog (ideal)'
@@ -51,7 +71,7 @@ function init_charts(dark_mode: boolean = false) {
 		],
 	});
 
-	chartDigitalI = echarts.init(refChartDigitalI.value!, dark_mode ? 'dark' : '');
+	chartDigitalI = echarts.init(refChartDigitalI.value!, dark_mode.value ? 'dark' : '');
 	chartDigitalI.setOption({
 		title: {
 			text: 'Digital (ideal)'
@@ -75,7 +95,7 @@ function init_charts(dark_mode: boolean = false) {
 		],
 	});
 
-	chartDigitalR = echarts.init(refChartDigitalR.value!, dark_mode ? 'dark' : '');
+	chartDigitalR = echarts.init(refChartDigitalR.value!, dark_mode.value ? 'dark' : '');
 	chartDigitalR.setOption({
 		title: {
 			text: 'Real'
@@ -105,15 +125,27 @@ function init_charts(dark_mode: boolean = false) {
 	});
 }
 
-defineExpose({
-	init_charts,
-	delete_charts,
+onMounted(() => {
+	register_resource({
+		id: section_id,
+		constructor: init_charts,
+		destructor: delete_charts,
+	});
 });
 
+onUnmounted(() => {
+	deregister_resource(section_id);
+});
+
+watch(dark_mode, async () => {
+	if (!inited) return;
+
+	init_charts();
+});
 </script>
 
 <template>
-	<section id="foo">
+	<section :id="section_id">
 		<h3>Signal: Analog vs Digital</h3>
 		<div class="bfocm-column-3">
 			<div class="fragment">
