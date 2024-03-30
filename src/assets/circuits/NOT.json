@@ -1,0 +1,72 @@
+{
+	"logicInput": [
+		{
+			"value": 1,
+			"posX": 161,
+			"posY": 48,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": -3,
+			"offsetMouseY": -2,
+			"nodeStartID": 4,
+			"isSaved": true
+		}
+	],
+	"logicOutput": [
+		{
+			"value": false,
+			"posX": 450,
+			"posY": 49,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": -8,
+			"offsetMouseY": -1,
+			"nodeStartID": 8,
+			"isSaved": true
+		}
+	],
+	"flipflop": [],
+	"logicClock": [],
+	"gate": [
+		{
+			"strType": "NAND",
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 269,
+			"posY": 24,
+			"isSpawned": true,
+			"offsetMouseX": 196,
+			"offsetMouseY": 58,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 5
+		}
+	],
+	"srLatch": [],
+	"wire": [
+		{
+			"startID": 4,
+			"endID": 5,
+			"endX": 57,
+			"endY": 25,
+			"width": 8
+		},
+		{
+			"startID": 7,
+			"endID": 8,
+			"endX": 186,
+			"endY": 47,
+			"width": 8
+		},
+		{
+			"startID": 4,
+			"endID": 6,
+			"endX": 269,
+			"endY": 61,
+			"width": 8
+		}
+	]
+}
