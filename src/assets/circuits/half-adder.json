@@ -1,0 +1,131 @@
+{
+	"logicInput": [
+		{
+			"value": 0,
+			"posX": 106,
+			"posY": 66,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": -4,
+			"offsetMouseY": -1,
+			"nodeStartID": 6,
+			"isSaved": true
+		},
+		{
+			"value": 0,
+			"posX": 105,
+			"posY": 148,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 2,
+			"offsetMouseY": 3,
+			"nodeStartID": 7,
+			"isSaved": true
+		}
+	],
+	"logicOutput": [
+		{
+			"value": 0,
+			"posX": 370,
+			"posY": 76,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 8,
+			"isSaved": true
+		},
+		{
+			"value": 0,
+			"posX": 370,
+			"posY": 141,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 9,
+			"isSaved": true
+		}
+	],
+	"flipflop": [],
+	"logicClock": [],
+	"gate": [
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 202,
+			"posY": 51,
+			"isSpawned": true,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 0
+		},
+		{
+			"strType": "XOR",
+			"type": 6,
+			"width": 100,
+			"height": 50,
+			"posX": 203,
+			"posY": 115,
+			"isSpawned": true,
+			"offsetMouseX": -96,
+			"offsetMouseY": -24,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 3
+		}
+	],
+	"srLatch": [],
+	"wire": [
+		{
+			"startID": 6,
+			"endID": 0,
+			"endX": 142,
+			"endY": 62,
+			"width": 8
+		},
+		{
+			"startID": 6,
+			"endID": 3,
+			"endX": 138,
+			"endY": 71,
+			"width": 8
+		},
+		{
+			"startID": 7,
+			"endID": 1,
+			"endX": 137,
+			"endY": 146,
+			"width": 8
+		},
+		{
+			"startID": 7,
+			"endID": 4,
+			"endX": 142,
+			"endY": 152,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 8,
+			"endX": 304,
+			"endY": 80,
+			"width": 8
+		},
+		{
+			"startID": 5,
+			"endID": 9,
+			"endX": 299,
+			"endY": 139,
+			"width": 8
+		}
+	]
+}
