@@ -1,0 +1,173 @@
+{
+	"logicInput": [
+		{
+			"value": false,
+			"posX": 130,
+			"posY": 60,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 0,
+			"isSaved": true
+		},
+		{
+			"value": false,
+			"posX": 129,
+			"posY": 109,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 1,
+			"isSaved": true
+		},
+		{
+			"value": false,
+			"posX": 128,
+			"posY": 162,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 2,
+			"isSaved": true
+		}
+	],
+	"logicOutput": [
+		{
+			"value": false,
+			"posX": 539,
+			"posY": 112,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 14,
+			"isSaved": true
+		}
+	],
+	"flipflop": [],
+	"logicClock": [],
+	"gate": [
+		{
+			"strType": "NOT",
+			"type": 1,
+			"width": 100,
+			"height": 50,
+			"posX": 181,
+			"posY": 85,
+			"isSpawned": true,
+			"offsetMouseX": -4,
+			"offsetMouseY": -23,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 3
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 285,
+			"posY": 44,
+			"isSpawned": true,
+			"offsetMouseX": -1,
+			"offsetMouseY": -14,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 5
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 286,
+			"posY": 130,
+			"isSpawned": true,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 8
+		},
+		{
+			"strType": "OR",
+			"type": 4,
+			"width": 100,
+			"height": 50,
+			"posX": 387,
+			"posY": 87,
+			"isSpawned": true,
+			"offsetMouseX": -99,
+			"offsetMouseY": -24,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 11
+		}
+	],
+	"srLatch": [],
+	"wire": [
+		{
+			"startID": 0,
+			"endID": 5,
+			"endX": 167,
+			"endY": 61,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 3,
+			"endX": 162,
+			"endY": 107,
+			"width": 8
+		},
+		{
+			"startID": 4,
+			"endID": 8,
+			"endX": 282,
+			"endY": 109,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 9,
+			"endX": 160,
+			"endY": 160,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 6,
+			"endX": 153,
+			"endY": 105,
+			"width": 8
+		},
+		{
+			"startID": 7,
+			"endID": 11,
+			"endX": 389,
+			"endY": 69,
+			"width": 8
+		},
+		{
+			"startID": 10,
+			"endID": 12,
+			"endX": 391,
+			"endY": 119,
+			"width": 8
+		},
+		{
+			"startID": 13,
+			"endID": 14,
+			"endX": 486,
+			"endY": 111,
+			"width": 8
+		}
+	]
+}
