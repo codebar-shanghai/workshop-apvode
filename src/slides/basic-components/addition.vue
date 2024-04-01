@@ -40,10 +40,6 @@
 </template>
 
 <style scoped>
-.mono {
-	font-family: Consolas, Menlo, Monaco, 'Courier New', 'Lucida Console', Courier, monospace;
-}
-
 .column-2 {
 	display: flex;
 	justify-content: space-evenly;

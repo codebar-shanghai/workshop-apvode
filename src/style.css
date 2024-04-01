@@ -3,3 +3,7 @@
 	height: 100vh;
 }
 
+.mono {
+	font-family: Consolas, Menlo, Monaco, 'Courier New', 'Lucida Console', Courier, monospace;
+}
+
