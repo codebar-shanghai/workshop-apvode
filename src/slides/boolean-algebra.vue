@@ -81,7 +81,7 @@ import ProblemStack2 from "./problem-stack-2.vue";
 			<h3>Universal Gates: NOR & NAND</h3>
 			<div class="column-2">
 				<div>
-					<a src="https://en.wikipedia.org/wiki/Apollo_Guidance_Computer" target="_blank">
+					<a href="https://en.wikipedia.org/wiki/Apollo_Guidance_Computer" target="_blank">
 						<img src="../assets/images/Aldrin_Apollo_11.jpg">
 					</a>
 				</div>
