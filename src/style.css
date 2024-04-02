@@ -4,6 +4,6 @@
 }
 
 .mono {
-	font-family: Consolas, Menlo, Monaco, 'Courier New', 'Lucida Console', Courier, monospace;
+	font-family: var(--r-code-font);
 }
 
