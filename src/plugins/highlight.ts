@@ -1,4 +1,4 @@
-import "highlight.js/styles/stackoverflow-dark.css";
+import "highlight.js/styles/stackoverflow-light.css";
 import hljs          from "highlight.js/lib/core";
 import cpp           from "highlight.js/lib/languages/cpp";
 import plaintext     from "highlight.js/lib/languages/plaintext";
