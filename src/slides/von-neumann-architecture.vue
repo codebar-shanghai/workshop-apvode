@@ -70,8 +70,8 @@
 				</div>
 				<div>
 					<div>
-						<highlightjs language="cpp" :code="CODE_1" />
-						<highlightjs language="plaintext" :code="CODE_2" />
+						<highlightjs language="c" :autodetect="false" :code="CODE_1" />
+						<highlightjs language="plaintext" :autodetect="false" :code="CODE_2" />
 					</div>
 				</div>
 			</div>

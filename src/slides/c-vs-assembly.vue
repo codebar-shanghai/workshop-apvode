@@ -38,18 +38,18 @@
 		</section>
 		<section data-auto-animate>
 			<h3>How to Convert C to Machine Code</h3>
-			<highlightjs lang="cpp" :code="CODE_C_ORI" />
+			<highlightjs language="c" :autodetect="false" :code="CODE_C_ORI" />
 		</section>
 		<section data-auto-animate>
 			<h3>How to Convert C to Machine Code</h3>
-			<highlightjs lang="cpp" :code="CODE_C_ORI" />
-			<highlightjs lang="bash" :code="COMMAND_GCC_AIO" />
+			<highlightjs language="c" :autodetect="false" :code="CODE_C_ORI" />
+			<highlightjs language="bash" :autodetect="false" :code="COMMAND_GCC_AIO" />
 		</section>
 		<section data-auto-animate>
 			<h3>How to Convert C to Machine Code</h3>
-			<highlightjs lang="cpp" :code="CODE_C_ORI" />
-			<highlightjs lang="bash" :code="COMMAND_GCC_AIO" />
-			<highlightjs lang="bash" :code="COMMAND_EXEC" />
+			<highlightjs language="c" :autodetect="false" :code="CODE_C_ORI" />
+			<highlightjs language="bash" :autodetect="false" :code="COMMAND_GCC_AIO" />
+			<highlightjs language="bash" :autodetect="false" :code="COMMAND_EXEC" />
 		</section>
 		<section>
 			<h3>Easy, right?</h3>
@@ -73,14 +73,14 @@
 		<section data-auto-animate>
 			<h3>Preprocessor</h3>
 			<div>
-				<highlightjs lang="bash" code="gcc -E main.c -o main.i" />
+				<highlightjs language="bash" :autodetect="false" code="gcc -E main.c -o main.i" />
 			</div>
 			<div class="column-2">
 				<div>
-					<highlightjs lang="cpp" :code="CODE_C_ORI" />
+					<highlightjs language="c" :autodetect="false" :code="CODE_C_ORI" />
 				</div>
 				<div>
-					<highlightjs lang="cpp" :code="CODE_I" />
+					<highlightjs language="c" :autodetect="false" :code="CODE_I" />
 				</div>
 			</div>
 		</section>
@@ -91,14 +91,14 @@
 		<section>
 			<h3>Compilation</h3>
 			<div>
-				<highlightjs lang="bash" code="gcc -S main.i -o main.s" />
+				<highlightjs language="bash" :autodetect="false" code="gcc -S main.i -o main.s" />
 			</div>
 			<div class="column-2">
 				<div>
-					<highlightjs lang="cpp" :code="CODE_C_ORI" />
+					<highlightjs language="c" :autodetect="false" :code="CODE_C_ORI" />
 				</div>
 				<div>
-					<highlightjs lang="x86asm" :code="CODE_S_X86" />
+					<highlightjs language="x86asm" :autodetect="false" :code="CODE_S_X86" />
 				</div>
 			</div>
 		</section>
