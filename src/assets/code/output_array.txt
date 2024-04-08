@@ -1,0 +1,5 @@
+$ ./array
+The address of a    is 0x7ffdbcba285c
+The address of a[0] is 0x7ffdbcba285c
+The address of a[1] is 0x7ffdbcba2860
+The address of a[2] is 0x7ffdbcba2864

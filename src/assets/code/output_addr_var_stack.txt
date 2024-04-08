@@ -1,0 +1,3 @@
+$ ./addr_var_stack
+The size of x is 4 byte(s)
+The address of x is 0x7ffde0c2a054

@@ -1,0 +1,5 @@
+$ ./pointer
+The address of x is 0x7fff90062e4c
+The address of p is 0x7fff90062e50
+The value   of p is 0x7fff90062e4c
+The value p points to is 42

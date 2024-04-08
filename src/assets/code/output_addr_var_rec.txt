@@ -1,0 +1,21 @@
+$ ./addr_var_recursive
+=== 0 ===
+The address of s1 is             0x7ffc1b25a6b0
+The address of s2 is             0x7ffc1b25a6a8
+The address that s2 points to is 0x632de61e72a0
+=== 1 ===
+The address of s1 is             0x7ffc1b25a670
+The address of s2 is             0x7ffc1b25a668
+The address that s2 points to is 0x632de61e76d0
+=== 2 ===
+The address of s1 is             0x7ffc1b25a630
+The address of s2 is             0x7ffc1b25a628
+The address that s2 points to is 0x632de61e76f0
+=== 3 ===
+The address of s1 is             0x7ffc1b25a5f0
+The address of s2 is             0x7ffc1b25a5e8
+The address that s2 points to is 0x632de61e7710
+=== 4 ===
+The address of s1 is             0x7ffc1b25a5b0
+The address of s2 is             0x7ffc1b25a5a8
+The address that s2 points to is 0x632de61e7730

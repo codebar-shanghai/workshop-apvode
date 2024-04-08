@@ -1,0 +1,4 @@
+$ ./array_uninitialized
+The value of a[0] is 0
+The value of a[1] is 4096
+The value of a[2] is 0
