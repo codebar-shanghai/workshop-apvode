@@ -10,7 +10,7 @@ import XORGATE from "../assets/circuits/XOR.json";
 
 import TruthTable from "./gates/truth-table.vue";
 
-import ProblemStack2 from "./problem-stack-2.vue";
+import ProblemStack2 from "../components/problem-stack-2.vue";
 </script>
 
 <template>
