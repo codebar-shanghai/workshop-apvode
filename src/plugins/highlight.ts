@@ -1,5 +1,6 @@
 import "highlight.js/styles/stackoverflow-light.css";
 import hljs          from "highlight.js/lib/core";
+import armasm        from "highlight.js/lib/languages/armasm";
 import bash          from "highlight.js/lib/languages/bash";
 import c             from "highlight.js/lib/languages/c";
 import csharp        from "highlight.js/lib/languages/csharp";
@@ -10,6 +11,7 @@ import python        from "highlight.js/lib/languages/python";
 import x86asm        from "highlight.js/lib/languages/x86asm";
 import hljsVuePlugin from "@highlightjs/vue-plugin";
 
+hljs.registerLanguage("armasm", armasm);
 hljs.registerLanguage("bash", bash);
 hljs.registerLanguage("c", c);
 hljs.registerLanguage("csharp", csharp);

@@ -118,6 +118,17 @@
 			</div>
 		</section>
 		<section>
+			<h3>x86_64 vs ARMv8</h3>
+			<div class="column-2">
+				<div>
+					<highlightjs language="x86asm" :autodetect="false" :code="CODE_S_X86" />
+				</div>
+				<div>
+					<highlightjs language="armasm" :autodetect="false" :code="CODE_S_ARM" />
+				</div>
+			</div>
+		</section>
+		<section>
 			<h3>Assembler</h3>
 			<img src="../assets/images/BFoCM-compile-c-assembler.svg" />
 		</section>
@@ -144,6 +155,7 @@
 <script setup lang="ts">
 import CODE_C_ORI from "../assets/code/main.c?raw";
 import CODE_I_RAW from "../assets/code/main.i?raw";
+import CODE_S_ARM from "../assets/code/main.s.arm?raw";
 import CODE_S_X86 from "../assets/code/main.s.x86?raw";
 
 import CODE_CALLEE_C from "../assets/code/callee.c?raw";
