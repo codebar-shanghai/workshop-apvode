@@ -20,12 +20,17 @@
 		</section>
 		<section>
 			<h3>Java Virtural Machine</h3>
-			<h3>Another Abstraction</h3>
-			<!-- TODO img -->
+			<h4>Another Abstraction</h4>
+			<img src="../assets/images/BFoCM-java-bytecode.svg" />
 		</section>
 		<section>
 			<h3>Languages atop the JVM</h3>
-			<!-- TODO grid -->
+			<div class="grid">
+				<div v-for="i in JVM_LANGUAGE_ICONS">
+					<img :src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${i.icon}`" />
+					<span>{{i.name}}</span>
+				</div>
+			</div>
 		</section>
 		<section>
 			<h3>Some JVM Implementations</h3>
@@ -226,5 +231,13 @@ const JVM_LANGUAGE_ICONS = [
 </script>
 
 <style>
+.grid {
+	display: flex;
+	justify-content: center;
+}
+
+.grid img {
+	width: 100px;
+}
 </style>
 
