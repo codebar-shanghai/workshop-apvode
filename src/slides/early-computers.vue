@@ -92,6 +92,7 @@
 					</td>
 				</tr>
 			</table>
+			<div>PowerPC, MIPS, RISC-V, SPARC, ...</div>
 		</section>
 		<section>
 			<h3>The Tradeoffs of ISA</h3>
