@@ -2,6 +2,7 @@
 import {
 	computed,
 	onMounted,
+	provide,
 	ref,
 } from "vue";
 import type {
@@ -12,6 +13,7 @@ import "./styles/reveal-themes.scss";
 import Reveal from "reveal.js";
 
 const dark_mode = ref(true);
+provide("dark_mode", dark_mode);
 
 const theme_name = computed(() => {
 	return `reveal-root-theme-${dark_mode.value ? "black" : "white"}`;
@@ -20,22 +22,71 @@ const theme_name = computed(() => {
 import Timeline from "./components/Timeline.vue";
 import Modal from "./components/Modal.vue";
 
+// slides
+import Algorithms             from "./slides/algorithms.vue";
+import BasicComponents        from "./slides/basic-components.vue";
+import BooleanAlgebra         from "./slides/boolean-algebra.vue";
+import Break1                 from "./slides/break-1.vue";
+import Break2                 from "./slides/break-2.vue";
+import CVsAssembly            from "./slides/c-vs-assembly.vue";
+import EarlyComputers         from "./slides/early-computers.vue";
+import Epilogue               from "./slides/epilogue.vue";
+import FreeSoftwareMovement   from "./slides/free-software-movement.vue";
+import HighLevelPL            from "./slides/high-level-languages.vue";
+import OperatingSystem        from "./slides/operating-system.vue";
+import Posix                  from "./slides/posix.vue";
+import Printf                 from "./slides/printf.vue";
+import Prologue               from "./slides/prologue.vue";
+import StackHeap              from "./slides/stack-heap.vue";
+import TerminalShellEmulator  from "./slides/terminal-shell-emulator.vue";
+import VonNeumannArchitecture from "./slides/von-neumann-architecture.vue";
+
+// utils
+import {
+	constructors,
+	destructors,
+} from "./lib/ResourceManager.ts";
+
+// types
+type ModalMethods = {
+	show: () => void;
+};
+
+type RevealEvent = Event & {
+	currentSlide: Element;
+	previousSlide: Element;
+};
+
+// refs
+const timelineModal: Ref<ModalMethods | null> = ref(null);
+
 onMounted(() => {
 	const deck = new Reveal({
 		hash: false,
 	});
-	deck.initialize();
+	deck.initialize({
+		maxScale: 1,
+		minScale: 1,
+		slideNumber: true,
+		//autoPlayMedia: true, TODO
+		plugins: [
+		],
+	});
+
+	deck.on("slidechanged", event => {
+		const { previousSlide, currentSlide } = (event as unknown as RevealEvent);
+		if (destructors.has(previousSlide.id)) {
+			destructors.get(previousSlide.id)!();
+		}
+		if (constructors.has(currentSlide.id)) {
+			constructors.get(currentSlide.id)!();
+		}
+	});
 });
 
 function toggle_theme() {
 	dark_mode.value = !dark_mode.value;
 }
-
-type ModalMethods = {
-	show: () => void;
-};
-
-const timelineModal: Ref<ModalMethods | null> = ref(null);
 
 function open_timeline() {
 	timelineModal.value!.show();
@@ -55,6 +106,23 @@ function open_timeline() {
 		</div>
 		<div ref="revealEl" class="reveal">
 			<div class="slides">
+				<Prologue />
+				<BooleanAlgebra />
+				<BasicComponents />
+				<VonNeumannArchitecture />
+				<Break1 />
+				<EarlyComputers />
+				<OperatingSystem />
+				<CVsAssembly />
+				<FreeSoftwareMovement />
+				<Posix />
+				<Break2 />
+				<TerminalShellEmulator />
+				<Printf />
+				<StackHeap />
+				<HighLevelPL />
+				<Algorithms />
+				<Epilogue />
 			</div>
 		</div>
 		<Modal ref="timelineModal">
@@ -85,11 +153,19 @@ function open_timeline() {
 }
 
 .reveal-root-theme-black .bfocm-toolbar {
-	color: #666;
+	color: #333;
 }
 
 .reveal-root-theme-white .bfocm-toolbar {
-	color: #aaa;
+	color: #ccc;
 }
+
+.reveal-root-theme-black .bfocm-toolbar .btn:hover {
+	color: #ccc;
+}
+.reveal-root-theme-white .bfocm-toolbar .btn:hover {
+	color: #333;
+}
+
 </style>
 
