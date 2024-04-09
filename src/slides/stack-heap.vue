@@ -66,9 +66,39 @@
 			<img src="../assets/images/Tower_of_Hanoi.jpeg" />
 			<div class="fragment">First-In-Last-Out (or Last-In-First-Out)</div>
 		</section>
-		<section>
+		<section data-auto-animate>
 			<h3>Memory Hierarchy</h3>
 			<img src="../assets/images/BFoCM-memory-hierarchy.png" />
+		</section>
+		<section data-auto-animate>
+			<h3>Memory Hierarchy</h3>
+			<table class="memory-hierarchy">
+				<tr>
+					<td style="text-align: right">0.5ns</td>
+					<td>L1 Cache</td>
+					<td class="fragment" data-fragment-index="1">0.5s</td>
+				</tr>
+				<tr>
+					<td>7ns</td>
+					<td>L2 Cache</td>
+					<td class="fragment" data-fragment-index="1">7s</td>
+				</tr>
+				<tr>
+					<td>100ns</td>
+					<td>DRAM</td>
+					<td class="fragment" data-fragment-index="1">100s</td>
+				</tr>
+				<tr>
+					<td>150µs</td>
+					<td>SSD</td>
+					<td class="fragment" data-fragment-index="1">1.7 days</td>
+				</tr>
+				<tr>
+					<td>10ms</td>
+					<td>HDD</td>
+					<td class="fragment" data-fragment-index="1">16.5 weeks</td>
+				</tr>
+			</table>
 		</section>
 		<section>
 			<h3>Stack</h3>
@@ -118,6 +148,16 @@ import OUTPUT_POINTER        from "../assets/code/output_pointer.txt?raw";
 
 .column-2 > div {
 	width: 50%;
+}
+
+table.memory-hierarchy tr td {
+	text-align: center;
+}
+table.memory-hierarchy tr td:first-child {
+	text-align: right;
+}
+table.memory-hierarchy tr td:last-child {
+	text-align: left;
 }
 </style>
 
