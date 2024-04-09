@@ -3,7 +3,43 @@
 	height: 100vh;
 }
 
+h2, h3, h4 {
+	text-transform: none !important;
+}
+
+.reveal-root-theme-black table.problem-stack .ps-sw {
+	background: #3253a8;
+}
+
+.reveal-root-theme-black table.problem-stack .ps-hw {
+	background: #32a852;
+}
+
+.reveal-root-theme-white table.problem-stack .ps-sw {
+	background: #6fb6fc;
+}
+
+.reveal-root-theme-white table.problem-stack .ps-hw {
+	background: #5cf273;
+}
+
+.reveal-root-theme-white table.problem-stack .ps-isa {
+	background: #ee8bf7;
+}
+
+.reveal-root-theme-black table.problem-stack .ps-isa {
+	background: #a907b8;
+}
+
+table.problem-stack td {
+	text-align: center;
+}
+
 .mono {
 	font-family: var(--r-code-font);
+}
+
+code.hljs span.hljs-comment {
+	font-style: italic !important;
 }
 
