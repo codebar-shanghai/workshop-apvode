@@ -84,6 +84,21 @@
 				</div>
 			</div>
 		</section>
+		<section data-auto-animate>
+			<h3>Preprocessor</h3>
+			<div>
+				<highlightjs language="c" :autodetect="false" :code="CODE_CALLEE_C" />
+			</div>
+			<div class="fragment">
+				<highlightjs language="c" :autodetect="false" :code="CODE_CALLEE_H" />
+			</div>
+		</section>
+		<section data-auto-animate>
+			<h3>Preprocessor</h3>
+			<div>
+				<highlightjs language="c" :autodetect="false" :code="CODE_CALLER_C" />
+			</div>
+		</section>
 		<section data-auto-animate data-auto-animate-restart>
 			<h3>Compilation</h3>
 			<img src="../assets/images/BFoCM-compile-c-compiler.svg" />
@@ -130,6 +145,10 @@
 import CODE_C_ORI from "../assets/code/main.c?raw";
 import CODE_I_RAW from "../assets/code/main.i?raw";
 import CODE_S_X86 from "../assets/code/main.s.x86?raw";
+
+import CODE_CALLEE_C from "../assets/code/callee.c?raw";
+import CODE_CALLEE_H from "../assets/code/callee.h?raw";
+import CODE_CALLER_C from "../assets/code/caller.c?raw";
 
 const LANG_ICONS = [
 	"cplusplus/cplusplus-original.svg",
