@@ -1,4 +1,7 @@
-import { defineConfig } from 'vite'
+import {
+	defineConfig,
+	splitVendorChunkPlugin,
+} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import svgLoader from 'vite-svg-loader'
 
@@ -6,6 +9,7 @@ import svgLoader from 'vite-svg-loader'
 export default defineConfig({
 	plugins: [
 		vue(),
+		splitVendorChunkPlugin(),
 		svgLoader(),
 	],
 	server: {
