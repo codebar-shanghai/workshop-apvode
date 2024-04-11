@@ -1,12 +1,12 @@
 <template>
 	<section :id="section_id">
-		<h3>
+		<h3 class="fragment" data-fragment-index="2">
 			<slot name="header"></slot>
 		</h3>
 		<div class="w-full flex justify-center">
 			<div ref="refDivSimulator" :style="simulatorStyleObject"></div>
 		</div>
-		<div>
+		<div class="fragment" data-fragment-index="1">
 			<slot name="tftable"></slot>
 		</div>
 	</section>
