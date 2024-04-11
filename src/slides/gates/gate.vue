@@ -3,7 +3,9 @@
 		<h3>
 			<slot name="header"></slot>
 		</h3>
-		<div ref="refDivSimulator"></div>
+		<div class="w-full flex justify-center">
+			<div ref="refDivSimulator" :style="simulatorStyleObject"></div>
+		</div>
 		<div>
 			<slot name="tftable"></slot>
 		</div>
@@ -14,6 +16,7 @@
 import {
 	onMounted,
 	onUnmounted,
+	reactive,
 	ref,
 } from "vue";
 
@@ -37,6 +40,19 @@ let simulator: Simulator | null;
 const props = defineProps({
 	section_id: String,
 	LCJson: Object,
+	canvas_width: {
+		type: [Number, String],
+		default: 500,
+	},
+	canvas_height: {
+		type: [Number, String],
+		default: 500,
+	}
+});
+
+const simulatorStyleObject = reactive({
+	width: `${props.canvas_width}px`,
+	height: `${props.canvas_height}px`,
 });
 
 function load_simulator() {
