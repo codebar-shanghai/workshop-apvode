@@ -98,8 +98,8 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		</Gate>
 		<section>
 			<h3>Summary of Logic Gates</h3>
-			<div class="column-2">
-				<ProblemStack2 />
+			<div class="flex">
+				<ProblemStack2 class="text-lg" />
 				<a href="https://exclusivearchitecture.com/03-technical-articles-IC-02-03-logic-level.html" target="_blank">
 					<img src="../assets/images/Overview_All_Gates_Updated_01.png">
 				</a>
@@ -107,14 +107,14 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		</section>
 		<section>
 			<h3>Universal Gates: NOR & NAND</h3>
-			<div class="column-2">
+			<div class="flex items-center">
 				<div>
 					<a href="https://en.wikipedia.org/wiki/Apollo_Guidance_Computer" target="_blank">
 						<img src="../assets/images/Aldrin_Apollo_11.jpg">
 					</a>
 				</div>
 				<div>
-					<ul>
+					<ul style="font-size: 32px">
 						<li>It's possible to implement a computer with NOR or NAND gates only. Read more about <a href="https://en.wikipedia.org/wiki/NOR_logic" target="_blank">NOR logic</a> and <a href="https://en.wikipedia.org/wiki/NAND_logic" target="_blank">NAND logic</a> on Wikipedia.</li>
 						<li>The Apollo Guidance Computers (1966-1975) were implemented with NOR gate only.</li>
 					</ul>
@@ -125,8 +125,5 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 </template>
 
 <style scoped>
-.column-2 {
-	display: flex;
-}
 </style>
 

@@ -1,5 +1,5 @@
 <template>
-	<table>
+	<table class="text-lg text-center">
 		<thead>
 			<tr>
 				<th>Input A</th>

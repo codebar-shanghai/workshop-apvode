@@ -1,13 +1,15 @@
 <template>
 	<section :id="section_id">
 		<h3>The NAND Gate</h3>
-		<div class="container">
-			<img src="../../assets/images/CMOS_NAND.svg">
-			<div class="column-2">
-				<div style="background:white">
-				<img src="../../assets/images/NAND_ANSI_Labelled.svg">
+		<div class="flex">
+			<div class="w-1/2 flex justify-center">
+				<img src="../../assets/images/CMOS_NAND.svg" />
+			</div>
+			<div class="flex flex-col items-center w-1/2 justify-evenly">
+				<div class="w-full flex justify-center items-center bg-white">
+					<img src="../../assets/images/NAND_ANSI_Labelled.svg" />
 				</div>
-				<table>
+				<table class="text-lg text-center" style="margin:initial">
 					<thead>
 						<tr>
 							<th>Input A</th>
