@@ -26,8 +26,11 @@
 		"@types/p5": "^1.7.6",
 		"@types/reveal.js": "^4.4.8",
 		"@vitejs/plugin-vue": "^5.0.3",
+		"autoprefixer": "^10.4.19",
 		"less": "^4.2.0",
+		"postcss": "^8.4.38",
 		"sass": "^1.72.0",
+		"tailwindcss": "^3.4.3",
 		"typescript": "^5.2.2",
 		"vite": "^5.1.0",
 		"vue-tsc": "^1.8.27"
