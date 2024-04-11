@@ -1,29 +1,29 @@
 {
 	"logicInput": [
 		{
-			"value": 1,
-			"posX": 161,
-			"posY": 48,
+			"value": false,
+			"posX": 63,
+			"posY": 75,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": -3,
-			"offsetMouseY": -2,
-			"nodeStartID": 4,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 0,
 			"isSaved": true
 		}
 	],
 	"logicOutput": [
 		{
-			"value": false,
-			"posX": 450,
-			"posY": 49,
+			"value": true,
+			"posX": 286,
+			"posY": 76,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": -8,
-			"offsetMouseY": -1,
-			"nodeStartID": 8,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 4,
 			"isSaved": true
 		}
 	],
@@ -35,37 +35,37 @@
 			"type": 3,
 			"width": 100,
 			"height": 50,
-			"posX": 269,
-			"posY": 24,
+			"posX": 131,
+			"posY": 51,
 			"isSpawned": true,
-			"offsetMouseX": 196,
-			"offsetMouseY": 58,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
 			"isMoving": false,
 			"isSaved": true,
-			"nodeStartID": 5
+			"nodeStartID": 1
 		}
 	],
 	"srLatch": [],
 	"wire": [
 		{
-			"startID": 4,
-			"endID": 5,
-			"endX": 57,
-			"endY": 25,
+			"startID": 0,
+			"endID": 1,
+			"endX": 95,
+			"endY": 71,
 			"width": 8
 		},
 		{
-			"startID": 7,
-			"endID": 8,
-			"endX": 186,
-			"endY": 47,
+			"startID": 0,
+			"endID": 2,
+			"endX": 99,
+			"endY": 77,
 			"width": 8
 		},
 		{
-			"startID": 4,
-			"endID": 6,
-			"endX": 269,
-			"endY": 61,
+			"startID": 3,
+			"endID": 4,
+			"endX": 232,
+			"endY": 78,
 			"width": 8
 		}
 	]

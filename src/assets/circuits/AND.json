@@ -1,41 +1,41 @@
 {
 	"logicInput": [
 		{
-			"value": 1,
-			"posX": 165,
-			"posY": 28,
+			"value": 0,
+			"posX": 38,
+			"posY": 24,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": -6,
-			"offsetMouseY": -3,
-			"nodeStartID": 4,
+			"offsetMouseX": 6,
+			"offsetMouseY": -2,
+			"nodeStartID": 6,
 			"isSaved": true
 		},
 		{
-			"value": 1,
-			"posX": 167,
-			"posY": 71,
+			"value": 0,
+			"posX": 38,
+			"posY": 89,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": 3,
-			"offsetMouseY": 2,
-			"nodeStartID": 12,
+			"offsetMouseX": 6,
+			"offsetMouseY": 1,
+			"nodeStartID": 7,
 			"isSaved": true
 		}
 	],
 	"logicOutput": [
 		{
-			"value": true,
-			"posX": 552,
-			"posY": 50,
+			"value": false,
+			"posX": 374,
+			"posY": 57,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": -3,
-			"offsetMouseY": 2,
-			"nodeStartID": 11,
+			"offsetMouseX": 307,
+			"offsetMouseY": 96,
+			"nodeStartID": 5,
 			"isSaved": true
 		}
 	],
@@ -47,58 +47,58 @@
 			"type": 3,
 			"width": 100,
 			"height": 50,
-			"posX": 269,
-			"posY": 24,
+			"posX": 101,
+			"posY": 31,
 			"isSpawned": true,
-			"offsetMouseX": -99,
-			"offsetMouseY": -22,
+			"offsetMouseX": 34,
+			"offsetMouseY": 70,
 			"isMoving": false,
 			"isSaved": true,
-			"nodeStartID": 5
+			"nodeStartID": 0
 		},
 		{
 			"strType": "NOT",
 			"type": 1,
 			"width": 100,
 			"height": 50,
-			"posX": 401,
-			"posY": 24,
+			"posX": 219,
+			"posY": 31,
 			"isSpawned": true,
-			"offsetMouseX": -58,
-			"offsetMouseY": -24,
+			"offsetMouseX": 152,
+			"offsetMouseY": 70,
 			"isMoving": false,
 			"isSaved": true,
-			"nodeStartID": 9
+			"nodeStartID": 3
 		}
 	],
 	"srLatch": [],
 	"wire": [
 		{
-			"startID": 4,
-			"endID": 5,
-			"endX": 57,
-			"endY": 25,
+			"startID": 6,
+			"endID": 0,
+			"endX": 74,
+			"endY": 51,
 			"width": 8
 		},
 		{
 			"startID": 7,
-			"endID": 9,
-			"endX": 368,
-			"endY": 46,
+			"endID": 1,
+			"endX": 85,
+			"endY": 114,
 			"width": 8
 		},
 		{
-			"startID": 10,
-			"endID": 11,
-			"endX": 506,
-			"endY": 54,
+			"startID": 2,
+			"endID": 3,
+			"endX": 221,
+			"endY": 76,
 			"width": 8
 		},
 		{
-			"startID": 12,
-			"endID": 6,
-			"endX": 206,
-			"endY": 72,
+			"startID": 4,
+			"endID": 5,
+			"endX": 328,
+			"endY": 80,
 			"width": 8
 		}
 	]

@@ -27,6 +27,8 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		<Gate
 			section_id="section-not-gate"
 			:LCJson="NOTGATE"
+			canvas_height="160"
+			canvas_width="340"
 		>
 			<template #header>NOT</template>
 			<template #tftable>
@@ -53,6 +55,8 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		<Gate
 			section_id="section-and-gate"
 			:LCJson="ANDGATE"
+			canvas_height="140"
+			canvas_width="420"
 		>
 			<template #header>AND</template>
 			<template #tftable>
@@ -62,6 +66,8 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		<Gate
 			section_id="section-or-gate"
 			:LCJson="ORGATE"
+			canvas_height="140"
+			canvas_width="380"
 		>
 			<template #header>OR</template>
 			<template #tftable>
@@ -71,6 +77,8 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		<Gate
 			section_id="section-nor-gate"
 			:LCJson="NORGATE"
+			canvas_height="140"
+			canvas_width="380"
 		>
 			<template #header>NOR</template>
 			<template #tftable>
@@ -80,6 +88,8 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		<Gate
 			section_id="section-xor-gate"
 			:LCJson="XORGATE"
+			canvas_height="220"
+			canvas_width="480"
 		>
 			<template #header>XOR</template>
 			<template #tftable>

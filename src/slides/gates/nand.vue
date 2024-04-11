@@ -30,7 +30,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<div ref="refDivSimulator"></div>
+				<div ref="refDivSimulator" class="nand-gate-container"></div>
 			</div>
 		</div>
 	</section>
@@ -92,6 +92,11 @@ onUnmounted(() => {
 }
 .column-2 {
 	width: 66%;
+}
+
+.nand-gate-container {
+	width: 280px;
+	height: 120px;
 }
 </style>
 

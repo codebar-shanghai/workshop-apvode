@@ -2,40 +2,40 @@
 	"logicInput": [
 		{
 			"value": 0,
-			"posX": 165,
-			"posY": 28,
+			"posX": 24,
+			"posY": 38,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": 10,
-			"offsetMouseY": 0,
-			"nodeStartID": 4,
+			"offsetMouseX": -2,
+			"offsetMouseY": 6,
+			"nodeStartID": 2,
 			"isSaved": true
 		},
 		{
-			"value": 1,
-			"posX": 165,
-			"posY": 71,
+			"value": 0,
+			"posX": 23,
+			"posY": 91,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
 			"offsetMouseX": 2,
-			"offsetMouseY": -5,
-			"nodeStartID": 12,
+			"offsetMouseY": 7,
+			"nodeStartID": 5,
 			"isSaved": true
 		}
 	],
 	"logicOutput": [
 		{
-			"value": true,
-			"posX": 553,
-			"posY": 49,
+			"value": false,
+			"posX": 341,
+			"posY": 63,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": 2,
+			"offsetMouseX": 7,
 			"offsetMouseY": 2,
-			"nodeStartID": 11,
+			"nodeStartID": 9,
 			"isSaved": true
 		}
 	],
@@ -43,83 +43,83 @@
 	"logicClock": [],
 	"gate": [
 		{
+			"strType": "NOT",
+			"type": 1,
+			"width": 100,
+			"height": 50,
+			"posX": 75,
+			"posY": 13,
+			"isSpawned": true,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 0
+		},
+		{
+			"strType": "NOT",
+			"type": 1,
+			"width": 100,
+			"height": 50,
+			"posX": 75,
+			"posY": 67,
+			"isSpawned": true,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 3
+		},
+		{
 			"strType": "NAND",
 			"type": 3,
 			"width": 100,
 			"height": 50,
-			"posX": 395,
-			"posY": 24,
+			"posX": 191,
+			"posY": 38,
 			"isSpawned": true,
-			"offsetMouseX": -42,
-			"offsetMouseY": -25,
+			"offsetMouseX": -2,
+			"offsetMouseY": -16,
 			"isMoving": false,
 			"isSaved": true,
-			"nodeStartID": 5
-		},
-		{
-			"strType": "NOT",
-			"type": 1,
-			"width": 100,
-			"height": 50,
-			"posX": 229,
-			"posY": 3,
-			"isSpawned": true,
-			"offsetMouseX": 0,
-			"offsetMouseY": 0,
-			"isMoving": false,
-			"isSaved": true,
-			"nodeStartID": 13
-		},
-		{
-			"strType": "NOT",
-			"type": 1,
-			"width": 100,
-			"height": 50,
-			"posX": 228,
-			"posY": 47,
-			"isSpawned": true,
-			"offsetMouseX": 0,
-			"offsetMouseY": 0,
-			"isMoving": false,
-			"isSaved": true,
-			"nodeStartID": 15
+			"nodeStartID": 6
 		}
 	],
 	"srLatch": [],
 	"wire": [
 		{
-			"startID": 7,
-			"endID": 11,
-			"endX": 496,
-			"endY": 50,
+			"startID": 2,
+			"endID": 0,
+			"endX": 52,
+			"endY": 41,
 			"width": 8
 		},
 		{
-			"startID": 12,
-			"endID": 15,
-			"endX": 199,
-			"endY": 74,
+			"startID": 5,
+			"endID": 3,
+			"endX": 50,
+			"endY": 93,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 6,
+			"endX": 178,
+			"endY": 38,
 			"width": 8
 		},
 		{
 			"startID": 4,
-			"endID": 13,
-			"endX": 197,
-			"endY": 26,
+			"endID": 7,
+			"endX": 176,
+			"endY": 92,
 			"width": 8
 		},
 		{
-			"startID": 14,
-			"endID": 5,
-			"endX": 329,
-			"endY": 29,
-			"width": 8
-		},
-		{
-			"startID": 16,
-			"endID": 6,
-			"endX": 333,
-			"endY": 71,
+			"startID": 8,
+			"endID": 9,
+			"endX": 295,
+			"endY": 62,
 			"width": 8
 		}
 	]
