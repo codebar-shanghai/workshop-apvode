@@ -33,8 +33,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="fragment mono" data-fragment-index="9">
-			(10101)<sub>2</sub> = 2<sup>4</sup> + 2<sup>2</sup> + 2<sup>0</sup> = 16 + 4 + 1
+		<div class="fragment mono mt-8" data-fragment-index="9">
+			(<span class="fragment custom custom-highlight-red" data-fragment-index="10">1</span>0<span class="fragment custom custom-highlight-purple" data-fragment-index="11">1</span>0<span class="fragment custom custom-highlight-cyan" data-fragment-index="12">1</span>)<sub>2</sub> = <span class="fragment border-b-2 border-red-500" data-fragment-index="10">2<sup>4</sup></span> <span class="fragment fade-up" data-fragment-index="11">+ <span class="border-b-2 border-purple-500">2<sup>2</sup></span></span> <span class="fragment" data-fragment-index="12">+ <span class="border-b-2 border-cyan-500">2<sup>0</sup></span></span> <span class="fragment" data-fragment-index="13">= 16 + 4 + 1</span>
 		</div>
 	</section>
 </template>
@@ -69,6 +69,16 @@
 
 .reveal-root-theme-white .answer {
 	border-top-color: #000;
+}
+
+.fragment.custom-highlight-red.visible {
+	border-bottom: 2px solid rgb(239 68 68);
+}
+.fragment.custom-highlight-purple.visible {
+	border-bottom: 2px solid rgb(168 85 247);
+}
+.fragment.custom-highlight-cyan.visible {
+	border-bottom: 2px solid rgb(6 182 212);
 }
 </style>
 
