@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<h3>How to add two numbers?</h3>
-		<div class="column-2 mono">
+		<div class="flex justify-evenly text-right mono">
 			<div>
 				<div class="header">Base 10</div>
 				<div class="carry fragment" data-fragment-index="1">1&nbsp;</div>

@@ -36,7 +36,10 @@
 	</section>
 	<section data-auto-animate :id="section_id">
 		<h3>1-bit Half Adder</h3>
-		<div ref="refDivSimulator"></div>
+		<div class="w-full flex justify-center">
+			<div ref="refDivSimulator" class="canvas-container"></div>
+		</div>
+		<div class="text-xl">Output on the top right is for carry, the other is for sum</div>
 	</section>
 </template>
 
@@ -89,4 +92,11 @@ onUnmounted(() => {
 	deregister_resource(section_id);
 });
 </script>
+
+<style scoped>
+.canvas-container {
+	width: 400px;
+	height: 180px;
+}
+</style>
 
