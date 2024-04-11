@@ -2,25 +2,25 @@
 	"logicInput": [
 		{
 			"value": 0,
-			"posX": 106,
-			"posY": 66,
+			"posX": 39,
+			"posY": 26,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": -4,
-			"offsetMouseY": -1,
+			"offsetMouseX": -33,
+			"offsetMouseY": 63,
 			"nodeStartID": 6,
 			"isSaved": true
 		},
 		{
 			"value": 0,
-			"posX": 105,
-			"posY": 148,
+			"posX": 38,
+			"posY": 110,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": 2,
-			"offsetMouseY": 3,
+			"offsetMouseX": 0,
+			"offsetMouseY": 4,
 			"nodeStartID": 7,
 			"isSaved": true
 		}
@@ -28,25 +28,25 @@
 	"logicOutput": [
 		{
 			"value": 0,
-			"posX": 370,
-			"posY": 76,
+			"posX": 303,
+			"posY": 36,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": 0,
-			"offsetMouseY": 0,
+			"offsetMouseX": 231,
+			"offsetMouseY": 73,
 			"nodeStartID": 8,
 			"isSaved": true
 		},
 		{
 			"value": 0,
-			"posX": 370,
-			"posY": 141,
+			"posX": 303,
+			"posY": 100,
 			"diameter": 25,
 			"isSpawned": true,
 			"isMoving": false,
-			"offsetMouseX": 0,
-			"offsetMouseY": 0,
+			"offsetMouseX": -3,
+			"offsetMouseY": 2,
 			"nodeStartID": 9,
 			"isSaved": true
 		}
@@ -59,11 +59,11 @@
 			"type": 2,
 			"width": 100,
 			"height": 50,
-			"posX": 202,
-			"posY": 51,
+			"posX": 135,
+			"posY": 11,
 			"isSpawned": true,
-			"offsetMouseX": 0,
-			"offsetMouseY": 0,
+			"offsetMouseX": 63,
+			"offsetMouseY": 48,
 			"isMoving": false,
 			"isSaved": true,
 			"nodeStartID": 0
@@ -73,11 +73,11 @@
 			"type": 6,
 			"width": 100,
 			"height": 50,
-			"posX": 203,
-			"posY": 115,
+			"posX": 136,
+			"posY": 75,
 			"isSpawned": true,
-			"offsetMouseX": -96,
-			"offsetMouseY": -24,
+			"offsetMouseX": 64,
+			"offsetMouseY": 112,
 			"isMoving": false,
 			"isSaved": true,
 			"nodeStartID": 3
@@ -88,43 +88,43 @@
 		{
 			"startID": 6,
 			"endID": 0,
-			"endX": 142,
-			"endY": 62,
+			"endX": 396,
+			"endY": 217,
 			"width": 8
 		},
 		{
 			"startID": 6,
 			"endID": 3,
-			"endX": 138,
-			"endY": 71,
+			"endX": 396,
+			"endY": 217,
 			"width": 8
 		},
 		{
 			"startID": 7,
 			"endID": 1,
-			"endX": 137,
-			"endY": 146,
+			"endX": 396,
+			"endY": 217,
 			"width": 8
 		},
 		{
 			"startID": 7,
 			"endID": 4,
-			"endX": 142,
-			"endY": 152,
+			"endX": 396,
+			"endY": 217,
 			"width": 8
 		},
 		{
 			"startID": 2,
 			"endID": 8,
-			"endX": 304,
-			"endY": 80,
+			"endX": 396,
+			"endY": 217,
 			"width": 8
 		},
 		{
 			"startID": 5,
 			"endID": 9,
-			"endX": 299,
-			"endY": 139,
+			"endX": 396,
+			"endY": 217,
 			"width": 8
 		}
 	]
