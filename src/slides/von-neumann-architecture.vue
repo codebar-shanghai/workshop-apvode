@@ -2,8 +2,8 @@
 	<section>
 		<section data-auto-animate data-auto-animate-id="one">
 			<h3>Main Memory</h3>
-			<h3>(Random Access Memory)</h3>
-			<ul>
+			<h4>(Random Access Memory)</h4>
+			<ul class="text-3xl">
 				<li class="fragment">Registers are inside processors, built with logic gates just like ALUs and other components.</li>
 				<li class="fragment">Registers are super fast, but can only be used to store a small number of data elements.</li>
 				<li class="fragment">Main memory is an array of bits, organized in <span class="mono it">W</span> words of <span class="mono it">N</span> bits each.</li>
@@ -14,11 +14,11 @@
 		</section>
 		<section data-auto-animate data-auto-animate-id="one">
 			<h3>Main Memory</h3>
-			<h3>(Random Access Memory)</h3>
-			<table>
+			<h4>(Random Access Memory)</h4>
+			<table class="text-3xl">
 				<tr>
-					<th>Addr.</th>
-					<th>Value</th>
+					<th class="text-center">Addr.</th>
+					<th class="text-center">Value</th>
 				</tr>
 				<tr>
 					<td class="mono">000</td>
@@ -30,11 +30,11 @@
 				</tr>
 				<tr>
 					<td class="mono">010</td>
-					<td class="mono">...</td>
+					<td class="mono text-center">...</td>
 				</tr>
 				<tr>
 					<td class="mono">...</td>
-					<td class="mono">...</td>
+					<td class="mono text-center">...</td>
 				</tr>
 				<tr>
 					<td class="mono">111</td>
@@ -44,11 +44,11 @@
 		</section>
 		<section data-auto-animate data-auto-animate-id="two">
 			<h3>Registers vs Memory</h3>
-			<ul>
-				<li>Typically variables live in memory.</li>
-				<li>Registers hold temporary values or values that we need to use repeatedly.</li>
-				<li>ALU operations work on registers only.</li>
-				<li>To operate with memory variables:
+			<ul class="text-3xl">
+				<li class="fragment">Typically variables live in memory.</li>
+				<li class="fragment">Registers hold temporary values or values that we need to use repeatedly.</li>
+				<li class="fragment">ALU operations work on registers only.</li>
+				<li class="fragment">To operate with memory variables:
 					<ul>
 						<li>Load them into a register.</li>
 						<li>Compute on them.</li>
@@ -59,8 +59,8 @@
 		</section>
 		<section data-auto-animate data-auto-animate-id="two">
 			<h3>Registers vs Memory</h3>
-			<div class="column-2">
-				<div>
+			<div class="flex justify-center items-center">
+				<div class="w-1/2">
 					<ul>
 						<li class="mono">0x1000: n</li>
 						<li class="mono">0x1004: r</li>
@@ -68,9 +68,11 @@
 						<li class="mono">0x100C: y</li>
 					</ul>
 				</div>
-				<div>
-					<div>
+				<div class="w-1/2">
+					<div class="fragment">
 						<highlightjs language="c" :autodetect="false" :code="CODE_1" />
+					</div>
+					<div class="fragment">
 						<highlightjs language="plaintext" :autodetect="false" :code="CODE_2" />
 					</div>
 				</div>
@@ -78,45 +80,49 @@
 		</section>
 		<section data-auto-animate data-auto-animate-id="three">
 			<h3>von Neumann Computer</h3>
-			<div class="column-2">
-			<div>
-			<ul>
-				<li>Also called stored-program computer</li>
-				<li>Express program as a sequence of <span class="strong">coded instructions</span></li>
-				<li>Memory holds both data and instructions</li>
-				<li>CPU fetches, interprets, and executes successive instructions of the program</li>
-			</ul>
-			</div>
+			<div class="flex items-center">
 				<div>
-			<img src="../assets/images/BFoCM-von-neumann-computer.svg">
-			</div>
+					<ul class="text-3xl">
+						<li class="fragment">Also called stored-program computer</li>
+						<li class="fragment">Express program as a sequence of <span class="strong">coded instructions</span></li>
+						<li class="fragment">Memory holds both data and instructions</li>
+						<li class="fragment">CPU fetches, interprets, and executes successive instructions of the program</li>
+					</ul>
+				</div>
+				<div class="fragment">
+					<img src="../assets/images/BFoCM-von-neumann-computer.svg" />
+				</div>
 			</div>
 		</section>
 		<section data-auto-animate data-auto-animate-id="three">
 			<h3>von Neumann Computer</h3>
-			<img src="../assets/images/BFoCM-von-neumann-computer-anatomy.svg">
-			<ul>
-				<li><span class="strong">Instructions</span> coded as binary data</li>
-				<li><span class="strong">Program Counter</span>, or PC, a special register, stores the address of the instruction to be executed</li>
-				<li>Decode the instruction, and generate control signals for datapath</li>
-			</ul>
-		</section>
-		<section data-auto-animate data-auto-animate-id="three">
-			<h3>von Neumann Computer</h3>
-			<div>Instructions are the fundamental unite of work.</div>
-			<div>Each instruction specifies:
-				<ul>
-					<li>an operation (also called <span class="strong">opcode</span>) to be performed,</li>
-					<li>source and destination <span class="strong">operands</span>.</li>
+			<div class="flex flex-col items-center">
+				<img src="../assets/images/BFoCM-von-neumann-computer-anatomy.svg">
+				<ul class="text-3xl">
+					<li class="fragment"><span class="strong">Instructions</span> coded as binary data</li>
+					<li class="fragment"><span class="strong">Program Counter</span>, or PC, a special register, stores the address of the instruction to be executed</li>
+					<li class="fragment">Decode the instruction, and generate control signals for datapath</li>
 				</ul>
 			</div>
-			<div>By default, the next PC is current PC + size of current instruction, unless the instruction says otherwise. <span class="fragment"><span class="strong">guess?</span></span></div>
-			<div>
+		</section>
+		<section data-auto-animate data-auto-animate-id="three">
+			<h3>von Neumann Computer</h3>
+			<div class="flex justify-center">
 				<img src="../assets/images/BFoCM-von-neumann-computer-loop.svg">
+			</div>
+			<div class="text-3xl text-left">
+				<div class="fragment mt-6">Instructions are the fundamental unite of work.</div>
+				<div class="fragment mt-6">Each instruction specifies:
+					<ul>
+						<li>an operation (also called <span class="strong">opcode</span>) to be performed,</li>
+						<li>source and destination <span class="strong">operands</span>.</li>
+					</ul>
+				</div>
+				<div class="fragment mt-6">By default, the next PC is current PC + size of current instruction, unless the instruction says otherwise. <span class="fragment"><span class="strong">guess?</span></span></div>
 			</div>
 		</section>
 		<section>
-			<h3>Assembly Language</h3>
+			<h3>Your Own Programmable Machine</h3>
 			<ul>
 				<li class="fragment">Now you can design your own CPU with logic gates. <span class="fragment">Theoretically.</span></li>
 				<li class="fragment">And you can write programs to run on your own CPU. <span class="fragment">In Binary.</span></li>
@@ -136,20 +142,11 @@ R1 <- R1 - 37`;
 </script>
 
 <style scoped>
-.column-2 {
-	display: flex;
-	justify-content: space-around;
-}
-
-.column-2 > div {
-	width: 45%;
-}
-
 .it {
 	font-style: italic;
 }
 
-table th {
+table .text-center {
 	text-align: center;
 }
 
