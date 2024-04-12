@@ -5,8 +5,10 @@
 		</section>
 		<section>
 			<h3>Batch Systems in Mid 1950s</h3>
-			<img src="../assets/images/BFoCM-batch-system.png">
-			<div class="italic">Source: A. S. Tanenbaum, Operating Systems</div>
+			<div class="flex justify-center">
+				<img src="../assets/images/BFoCM-batch-system.png" />
+			</div>
+			<div class="italic text-lg">Source: A. S. Tanenbaum, Operating Systems</div>
 		</section>
 		<section>
 			<h3>A Few New Technologies in Early 1960s</h3>
@@ -43,10 +45,10 @@
 		<section>
 			<h3>UNIX</h3>
 			<ul>
-				<li>Originally named Unics, Uniplexed Information and Computing Service, a pun on Multics</li>
-				<li>Originally written in assembly language, Version 4 was rewritten in <span class="strong">C</span> in 1973</li>
-				<li>In 1973, AT&T licensed Version 5 Unix to educational institutions</li>
-				<li>The first <span class="strong">port</span> of Unix to another platform in 1977</li>
+				<li class="fragment">Originally named Unics, Uniplexed Information and Computing Service, a pun on Multics</li>
+				<li class="fragment">Originally written in assembly language, Version 4 was rewritten in <span class="font-bold text-red-500">C</span> in 1973</li>
+				<li class="fragment">In 1973, AT&T licensed Version 5 Unix to educational institutions</li>
+				<li class="fragment">The first <span class="font-bold text-red-500">port</span> of Unix to another platform in 1977</li>
 			</ul>
 		</section>
 		<section>
@@ -59,51 +61,59 @@
 			</a>
 		</section>
 		<section>
-			<h3>Key aspects of UNIX</h3>
+			<h3>Key Aspects of UNIX</h3>
 			<ul>
-				<li>Simplicity</li>
-				<li>Portability w/ the C programming language, easily adapted on different platforms</li>
-				<li>Shell, able to interactive w/ the system</li>
-				<li>Pipelines</li>
-				<li>Development Environment</li>
+				<li class="fragment">Simplicity</li>
+				<li class="fragment">Portability w/ the C programming language, easily adapted on different platforms</li>
+				<li class="fragment">Shell, able to interactive w/ the system</li>
+				<li class="fragment">Pipelines</li>
+				<li class="fragment">Development Environment</li>
 			</ul>
 		</section>
 		<section>
-			<img src="../assets/images/BFoCM-programming-against-hw.svg">
+			<div class="flex justify-center">
+				<img src="../assets/images/BFoCM-programming-against-hw.svg" />
+			</div>
 		</section>
 		<section data-auto-animate>
-			<img src="../assets/images/BFoCM-programming-against-os.svg">
+			<div class="flex justify-center">
+				<img src="../assets/images/BFoCM-programming-against-os.svg" />
+			</div>
 		</section>
 		<section data-auto-animate>
-			<img src="../assets/images/BFoCM-programming-against-os.svg">
+			<div class="flex justify-center">
+				<img src="../assets/images/BFoCM-programming-against-os.svg" />
+			</div>
 			<h3>Processes vs Program</h3>
-			<ul>
-				<li>A program is a collection of binary instructions</li>
-				<li>A process is an instance of a program that is being executed, including program code and states (registers, memory and other resources)</li>
-				<li>The <span class="strong">OS Kernel</span> is a process with special privileges</li>
+			<ul class="text-3xl">
+				<li class="fragment">A program is a collection of binary instructions</li>
+				<li class="fragment">A process is an instance of a program that is being executed, including program code and states (registers, memory and other resources)</li>
+				<li class="fragment">The <span class="font-bold text-red-500">OS Kernel</span> is a process with special privileges</li>
 			</ul>
 		</section>
 		<section data-auto-animate>
-			<img src="../assets/images/BFoCM-programming-against-os.svg">
+			<div class="flex justify-center">
+				<img src="../assets/images/BFoCM-programming-against-os.svg" />
+			</div>
 			<h3>Programmer's View of OS</h3>
-			<ul>
-				<li><span class="strong">Protection</span> and Privacy: Process cannot access each other's data</li>
-				<li><span class="strong">Abstraction</span>: OS hides details of underlying</li>
-				<li><span class="strong">Resource Management</span>: OS controls how processes share hardware</li>
+			<ul class="text-3xl">
+				<li class="fragment"><span class="strong">Protection</span> and Privacy: Process cannot access each other's data</li>
+				<li class="fragment"><span class="strong">Abstraction</span>: OS hides details of underlying</li>
+				<li class="fragment"><span class="strong">Resource Management</span>: OS controls how processes share hardware</li>
 			</ul>
 		</section>
-		<section data-auto-animate>
+		<section data-auto-animate style="margin-bottom: 50px">
 			<h3>Virtual Machines</h3>
-			<h4>A New Layer of Abstraction</h4>
-			<ProblemStack4 />
+			<div class="text-4xl">A New Layer of Abstraction</div>
+			<ProblemStack4 class="text-2xl" />
 		</section>
 		<section data-auto-animate>
 			<h3>Virtual Machines</h3>
 			<ul>
-				<li>The OS gives a Virtual Machine to each process</li>
-				<li>Each process believes it runs on its own machine, e.g. processor, memory, I/O, files ...</li>
-				<li>... but this machine doesn't exist in physical hardware</li>
-				<li>A virtual Machine is an <span class="strong">emulation</span> of a computer system</li>
+				<li class="fragment">The OS gives a Virtual Machine to each process</li>
+				<li class="fragment">Each process believes it runs on its own machine, e.g. processor, memory, I/O, files ...</li>
+				<li class="fragment">... but this machine doesn't exist in physical hardware</li>
+				<li class="fragment">A Virtual Machine is an <span class="font-bold text-red-500">emulation</span> of a computer system</li>
 			</ul>
 		</section>
 	</section>
@@ -114,9 +124,5 @@ import ProblemStack4 from "../components/problem-stack-4.vue";
 </script>
 
 <style scoped>
-.strong {
-	font-weight: bold;
-	color: red;
-}
 </style>
 
