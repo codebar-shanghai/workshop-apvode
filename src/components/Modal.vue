@@ -3,7 +3,7 @@
 		<div class="modal-header">
 			<span class="close" @click="close">&times;</span>
 		</div>
-		<div class="modal-content">
+		<div class="modal-content flex justify-center">
 			<slot></slot>
 		</div>
 	</div>
