@@ -1,7 +1,9 @@
 <template>
 	<section>
 		<section>
-			<img src="../assets/images/Heckert_GNU_white.svg" />
+			<div class="flex justify-center">
+				<img src="../assets/images/Heckert_GNU_white.svg" />
+			</div>
 			<h3>GNU = GNU's Not Unix</h3>
 		</section>
 		<section>
@@ -42,7 +44,7 @@
 		</section>
 		<section>
 			<h3>Linux Distributions</h3>
-			<div class="icon-container">
+			<div class="icon-container flex justify-center">
 				<img v-for="icon in DISTRO_ICONS" :src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}`" />
 			</div>
 		</section>
