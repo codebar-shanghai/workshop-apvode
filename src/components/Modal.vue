@@ -16,12 +16,17 @@ import {
 } from "vue";
 
 const isVisible = ref(false);
+let callback: undefined | Function;
 
-function show() {
+function show(x?: Function) {
 	isVisible.value = true;
+	callback = x;
 }
 
 function close() {
+	if (typeof callback === "function") {
+		callback();
+	}
 	isVisible.value = false;
 }
 
