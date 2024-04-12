@@ -1,11 +1,15 @@
 <template>
 	<section data-auto-animate>
 		<h3>Mux (Multiplexer)</h3>
-		<img src="../../assets/images/BFoCM-mux.svg">
+		<div class="flex justify-center">
+			<img src="../../assets/images/BFoCM-mux.svg" />
+		</div>
 	</section>
 	<section data-auto-animate :id="section_id">
 		<h3>2-bit Mux</h3>
-		<div ref="refDivSimulator"></div>
+		<div class="flex justify-center">
+			<div ref="refDivSimulator" class="canvas-container"></div>
+		</div>
 	</section>
 	<section data-auto-animate>
 		<h3>4-bit Mux</h3>
@@ -62,4 +66,11 @@ onUnmounted(() => {
 	deregister_resource(section_id);
 });
 </script>
+
+<style scoped>
+.canvas-container {
+	width: 480px;
+	height: 160px;
+}
+</style>
 
