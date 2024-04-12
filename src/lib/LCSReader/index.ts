@@ -44,7 +44,7 @@ export class Simulator {
 			};
 
 			p.windowResized = function() {
-				// TODO
+				p.resizeCanvas(el.offsetWidth, el.offsetHeight);
 			};
 
 			p.draw = function() {
