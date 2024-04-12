@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
+#include <stdio.h> // for printf()
+#include <fcntl.h> // for open() and O_RDWR
 
 int main() {
 	// Attempt to open /dev/null

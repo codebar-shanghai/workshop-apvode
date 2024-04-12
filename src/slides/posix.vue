@@ -11,21 +11,27 @@
 		</section>
 		<section>
 			<highlightjs language="plaintext" :autodetect="false" code="man 3 printf" />
-			<a href="https://man7.org/linux/man-pages/man3/printf.3.html">
-				<img src="../assets/images/man-printf(3).png" />
-			</a>
+			<div class="flex justify-center">
+				<a href="https://man7.org/linux/man-pages/man3/printf.3.html">
+					<img src="../assets/images/man-printf(3).png" />
+				</a>
+			</div>
 		</section>
 		<section>
 			<highlightjs language="plaintext" :autodetect="false" code="man 2 open" />
-			<a href="https://man7.org/linux/man-pages/man2/open.2.html">
-				<img src="../assets/images/man-open(2).png" />
-			</a>
+			<div class="flex justify-center">
+				<a href="https://man7.org/linux/man-pages/man2/open.2.html">
+					<img src="../assets/images/man-open(2).png" />
+				</a>
+			</div>
 		</section>
 		<section>
 			<highlightjs language="plaintext" :autodetect="false" code="man 4 null" />
-			<a href="https://man7.org/linux/man-pages/man4/null.4.html">
-				<img src="../assets/images/man-null(4).png" />
-			</a>
+			<div class="flex justify-center">
+				<a href="https://man7.org/linux/man-pages/man4/null.4.html">
+					<img src="../assets/images/man-null(4).png" />
+				</a>
+			</div>
 		</section>
 		<section>
 			<h3>Common Man Page Sections</h3>
@@ -63,10 +69,10 @@
 		<section data-auto-animate>
 			<h3>POSIX</h3>
 			<ul>
-				<li>It's a family of standards specified by IEEE.</li>
-				<li>It defined APIs for Unix-like operating systems.</li>
-				<li>Not all operating systems claim full compliance with POSIX standards.</li>
-				<li>But it allows developers to write applications that could run on any POSIX-compliant system without significant modifications.</li>
+				<li class="fragment">It's a family of standards specified by IEEE.</li>
+				<li class="fragment">It defined APIs for Unix-like operating systems.</li>
+				<li class="fragment">Not all operating systems claim full compliance with POSIX standards.</li>
+				<li class="fragment">But it allows developers to write applications that could run on any POSIX-compliant system without significant modifications.</li>
 			</ul>
 		</section>
 	</section>
@@ -80,11 +86,5 @@ The file discriptor is 3`;
 </script>
 
 <style scoped>
-.column-2 {
-	display: flex;
-}
-.column-2 > div {
-	width: 50%;
-}
 </style>
 
