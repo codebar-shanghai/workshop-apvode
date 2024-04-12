@@ -118,9 +118,5 @@ import ProblemStack4 from "../components/problem-stack-4.vue";
 	font-weight: bold;
 	color: red;
 }
-
-.italic {
-	font-style: italic;
-}
 </style>
 

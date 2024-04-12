@@ -4,7 +4,7 @@
 		<div class="flex justify-evenly text-right mono">
 			<div>
 				<div class="header">Base 10</div>
-				<div class="carry fragment" data-fragment-index="1">1&nbsp;</div>
+				<div class="carry fragment italic" data-fragment-index="1">1&nbsp;</div>
 				<div>14</div>
 				<div>+&nbsp;&nbsp;7</div>
 				<div class="answer">
@@ -15,7 +15,7 @@
 
 			<div class="fragment" data-fragment-index="3">
 				<div class="header">Base 2</div>
-				<div class="carry">
+				<div class="carry italic">
 					<span class="fragment" data-fragment-index="7">1</span>
 					<span class="fragment" data-fragment-index="6">1</span>
 					<span class="fragment" data-fragment-index="5">1</span>
@@ -56,7 +56,6 @@
 
 .carry {
 	color: red;
-	font-style: italic;
 }
 
 .answer {

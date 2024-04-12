@@ -109,7 +109,4 @@ import ProblemStack3 from "../components/problem-stack-3.vue";
 </script>
 
 <style scoped>
-.italic {
-	font-style: italic;
-}
 </style>

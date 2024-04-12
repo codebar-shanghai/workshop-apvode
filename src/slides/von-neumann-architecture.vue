@@ -6,8 +6,8 @@
 			<ul class="text-3xl">
 				<li class="fragment">Registers are inside processors, built with logic gates just like ALUs and other components.</li>
 				<li class="fragment">Registers are super fast, but can only be used to store a small number of data elements.</li>
-				<li class="fragment">Main memory is an array of bits, organized in <span class="mono it">W</span> words of <span class="mono it">N</span> bits each.</li>
-				<li class="fragment">Typically <span class="mono it">W</span> is power of 2 (<span class="mono">W = 2<sup>k</sup></span>), e.g. W = 8 (k = 3 address bits), N = 32 bits per word.</li>
+				<li class="fragment">Main memory is an array of bits, organized in <span class="mono italic">W</span> words of <span class="mono italic">N</span> bits each.</li>
+				<li class="fragment">Typically <span class="mono italic">W</span> is power of 2 (<span class="mono">W = 2<sup>k</sup></span>), e.g. W = 8 (k = 3 address bits), N = 32 bits per word.</li>
 				<li class="fragment">Can read from and write to individual words.</li>
 				<li class="fragment">Many possible implementations.</li>
 			</ul>
@@ -159,10 +159,6 @@ function open_modal() {
 </script>
 
 <style scoped>
-.it {
-	font-style: italic;
-}
-
 table .text-center {
 	text-align: center;
 }
