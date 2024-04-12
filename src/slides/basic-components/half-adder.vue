@@ -5,31 +5,31 @@
 			<tr>
 				<th>A</th>
 				<th>B</th>
-				<th class="fragment highlight-red" data-fragment-index="1">C</th>
-				<th class="fragment highlight-blue" data-fragment-index="2">S</th>
+				<th class="fragment highlight-red" data-fragment-index="5">C</th>
+				<th class="fragment highlight-blue" data-fragment-index="6">S</th>
 			</tr>
-			<tr>
+			<tr class="fragment" data-fragment-index="1">
 				<td>0</td>
 				<td>0</td>
 				<td>0</td>
 				<td>0</td>
 			</tr>
-			<tr>
-				<td class="fragment highlight-blue" data-fragment-index="2">1</td>
-				<td class="fragment highlight-blue" data-fragment-index="2">0</td>
+			<tr class="fragment" data-fragment-index="2">
+				<td class="fragment highlight-blue" data-fragment-index="6">1</td>
+				<td class="fragment highlight-blue" data-fragment-index="6">0</td>
 				<td>0</td>
-				<td class="fragment highlight-blue" data-fragment-index="2">1</td>
+				<td class="fragment highlight-blue" data-fragment-index="6">1</td>
 			</tr>
-			<tr>
-				<td class="fragment highlight-blue" data-fragment-index="2">0</td>
-				<td class="fragment highlight-blue" data-fragment-index="2">1</td>
+			<tr class="fragment" data-fragment-index="3">
+				<td class="fragment highlight-blue" data-fragment-index="6">0</td>
+				<td class="fragment highlight-blue" data-fragment-index="6">1</td>
 				<td>0</td>
-				<td class="fragment highlight-blue" data-fragment-index="2">1</td>
+				<td class="fragment highlight-blue" data-fragment-index="6">1</td>
 			</tr>
-			<tr>
-				<td class="fragment highlight-red" data-fragment-index="1">1</td>
-				<td class="fragment highlight-red" data-fragment-index="1">1</td>
-				<td class="fragment highlight-red" data-fragment-index="1">1</td>
+			<tr class="fragment" data-fragment-index="4">
+				<td class="fragment highlight-red" data-fragment-index="5">1</td>
+				<td class="fragment highlight-red" data-fragment-index="5">1</td>
+				<td class="fragment highlight-red" data-fragment-index="5">1</td>
 				<td>0</td>
 			</tr>
 		</table>
