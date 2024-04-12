@@ -12,33 +12,33 @@
 		</section>
 		<section>
 			<h3>Hi, Pointer</h3>
-			<div class="column-2">
-				<div>
+			<div class="flex">
+				<div class="w-1/2">
 					<highlightjs language="c" :autodetect="false" :code="CODE_POINTER" />
 				</div>
-				<div>
+				<div class="w-1/2">
 					<highlightjs language="plaintext" :autodetect="false" :code="OUTPUT_POINTER" />
 				</div>
 			</div>
 		</section>
-		<section>
+		<section data-auto-animate>
 			<h3>Hi, Array</h3>
-			<div class="column-2">
-				<div>
+			<div class="flex">
+				<div class="w-1/2">
 					<highlightjs language="c" :autodetect="false" :code="CODE_ARRAY" />
 				</div>
-				<div>
+				<div class="w-1/2">
 					<highlightjs language="plaintext" :autodetect="false" :code="OUTPUT_ARRAY" />
 				</div>
 			</div>
 		</section>
-		<section>
+		<section data-auto-animate>
 			<h3>Hi, Array</h3>
-			<div class="column-2">
-				<div>
+			<div class="flex">
+				<div class="w-1/2">
 					<highlightjs language="c" :autodetect="false" :code="CODE_ARRAY_UNINIT" />
 				</div>
-				<div>
+				<div class="w-1/2">
 					<highlightjs language="plaintext" :autodetect="false" :code="OUTPUT_ARRAY_UNINIT" />
 				</div>
 			</div>
@@ -58,12 +58,16 @@
 		</section>
 		<section data-auto-animate>
 			<h3>Hi Stack</h3>
-			<img src="../assets/images/premium_photo-1679255807252-3c568399dfc2.avif" />
+			<div class="flex justify-center">
+				<img src="../assets/images/premium_photo-1679255807252-3c568399dfc2.avif" />
+			</div>
 		</section>
 		<section data-auto-animate>
 			<h3>Hi Stack</h3>
 			<div>Tower of Hanoi</div>
-			<img src="../assets/images/Tower_of_Hanoi.jpeg" />
+			<div class="flex justify-center">
+				<img src="../assets/images/Tower_of_Hanoi.jpeg" />
+			</div>
 			<div class="fragment">First-In-Last-Out (or Last-In-First-Out)</div>
 		</section>
 		<section data-auto-animate>
@@ -105,7 +109,7 @@
 			<ul style="font-size: 30px">
 				<li class="fragment">When a function is called, a block is reserved on the top of stack for local variables and some bookkeeping data.</li>
 				<li class="fragment">When that function returns, the block becomes unused and can be reused for another function call.</li>
-				<li class="fragment">In most computer architectures, there is a special register known as the stack pointer register.</li>
+				<li class="fragment">In most computer architectures, there is a special register known as the <span class="text-red-500">stack pointer</span> register.</li>
 				<li class="fragment">The most recently used data (i.e. the data on the top of the stack) is likely to be the data needed next, it tends to stay in the CPU cache.</li>
 			</ul>
 		</section>
@@ -142,14 +146,6 @@ import OUTPUT_POINTER        from "../assets/code/output_pointer.txt?raw";
 </script>
 
 <style scoped>
-.column-2 {
-	display: flex;
-}
-
-.column-2 > div {
-	width: 50%;
-}
-
 table.memory-hierarchy tr td {
 	text-align: center;
 }
