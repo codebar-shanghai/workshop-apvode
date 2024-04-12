@@ -111,7 +111,7 @@
 				<img src="../assets/images/BFoCM-von-neumann-computer-loop.svg">
 			</div>
 			<div class="text-3xl text-left">
-				<div class="fragment mt-6">Instructions are the fundamental unite of work.</div>
+				<div class="fragment mt-6">Instructions are the fundamental unit of work.</div>
 				<div class="fragment mt-6">Each instruction specifies:
 					<ul>
 						<li>an operation (also called <span class="strong">opcode</span>) to be performed,</li>
