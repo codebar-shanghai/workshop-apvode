@@ -10,36 +10,44 @@
 		</section>
 		<section>
 			<h3>Terminals</h3>
-			<a href="https://www.flickr.com/photos/16057786@N00/1678948976">
-				<img src="../assets/images/1678948976_14529e3278_c.jpg" />
-			</a>
+			<div class="flex justify-center">
+				<a href="https://www.flickr.com/photos/16057786@N00/1678948976">
+					<img src="../assets/images/1678948976_14529e3278_c.jpg" />
+				</a>
+			</div>
 		</section>
 		<section>
 			<h3>Shells</h3>
-			<div>The kernel of an operating system manages hardwares.</div>
-			<div>A shell provides an interface to interact with the kernel indirectly.</div>
+			<ul class="text-4xl">
+				<li>The kernel of an operating system manages hardwares.</li>
+				<li>A shell provides an interface to interact with the kernel indirectly.</li>
+			</ul>
 		</section>
 		<section>
 			<h3>Notable Shells</h3>
 			<ul>
-				<li>Thompson shell - 1971, Ken Thompson</li>
-				<li>Bourne shell (sh) - 1979, Stephen Bourne</li>
-				<li>Bourne-Again SHell (bash) - 1989, Brian Fox</li>
-				<li>C shell (csh) - 1978, Bill Joy (BSD, vi, Sun Microsystems, Java, SPARC, Solaris, ...)</li>
-				<li>Powershell - 2006, Microsoft</li>
-				<li>Z shell (zsh) - 1990, Paul Falstad</li>
+				<li class="fragment">Thompson shell - 1971, Ken Thompson</li>
+				<li class="fragment">Bourne shell (sh) - 1979, Stephen Bourne</li>
+				<li class="fragment">Bourne-Again SHell (bash) - 1989, Brian Fox</li>
+				<li class="fragment">C shell (csh) - 1978, Bill Joy (BSD, vi, Sun Microsystems, Java, SPARC, Solaris, ...)</li>
+				<li class="fragment">Powershell - 2006, Microsoft</li>
+				<li class="fragment">Z shell (zsh) - 1990, Paul Falstad</li>
 			</ul>
 		</section>
 		<section>
 			<h3>Consoles</h3>
-			<a href="https://www.flickr.com/photos/ajmexico/3281139507/">
-				<img src="../assets/images/3281139507_f56091fa84_z.jpg" />
-			</a>
+			<div class="flex justify-center">
+				<a href="https://www.flickr.com/photos/ajmexico/3281139507/">
+					<img src="../assets/images/3281139507_f56091fa84_z.jpg" />
+				</a>
+			</div>
 		</section>
 		<section>
-			<a href="https://en.wikipedia.org/wiki/VT100">
-				<img src="../assets/images/DEC_VT100_terminal.jpg" />
-			</a>
+			<div class="flex justify-center">
+				<a href="https://en.wikipedia.org/wiki/VT100">
+					<img src="../assets/images/DEC_VT100_terminal.jpg" />
+				</a>
+			</div>
 		</section>
 		<section>
 			<h3>Pseudoterminal</h3>
@@ -49,7 +57,9 @@
 			</ul>
 		</section>
 		<section>
-			<img src="../assets/images/image_e3c2af63-3682-44c6-89b3-4c7d09f0fcf4.png" />
+			<div class="flex justify-center">
+				<img src="../assets/images/image_e3c2af63-3682-44c6-89b3-4c7d09f0fcf4.png" />
+			</div>
 		</section>
 		<section>
 			<h3>Notable Terminal Emulators</h3>
