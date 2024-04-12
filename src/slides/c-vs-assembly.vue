@@ -2,22 +2,22 @@
 	<section>
 		<section>
 			<h3>C (vs Assembly)</h3>
-			<ul>
-				<li>High Level: C provides a certain level of abstraction from the hardware</li>
-				<li>Portability: It's easy to convert from C to machine code</li>
-				<li>Easy of Use: functions, loops, conditional statements and data structures (arrays, linked list, tree, map)</li>
-				<li>Ideal for operating system or system-level application development</li>
+			<ul class="text-4xl">
+				<li class="fragment">High Level: C provides a certain level of abstraction from the hardware</li>
+				<li class="fragment">Portability: It's easy to convert from C to machine code</li>
+				<li class="fragment">Easy of Use: functions, loops, conditional statements and data structures (arrays, linked list, tree, map)</li>
+				<li class="fragment">Ideal for operating system or system-level application development</li>
 			</ul>
 		</section>
 		<section>
 			<h3>Languages Influenced by C</h3>
-			<div class="grid lang">
+			<div class="lang icon-container flex justify-center">
 				<img v-for="i in LANG_ICONS" :src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${i}`" />
 			</div>
 		</section>
 		<section>
 			<h3>Notable Softwares Developed in C</h3>
-			<div class="grid">
+			<div class="icon-container flex justify-center">
 				<img v-for="i in NOTABLE_SW_ICONS" :src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${i}`" />
 			</div>
 		</section>
@@ -59,7 +59,9 @@
 		</section>
 		<section data-auto-animate>
 			<h3>Preprocessor</h3>
-			<img src="../assets/images/BFoCM-compile-c-preprocessor.svg" />
+			<div class="flex justify-center">
+				<img src="../assets/images/BFoCM-compile-c-preprocessor.svg" />
+			</div>
 		</section>
 		<section data-auto-animate>
 			<h3>Preprocessor</h3>
@@ -75,11 +77,11 @@
 			<div>
 				<highlightjs language="bash" :autodetect="false" code="gcc -E main.c -o main.i" />
 			</div>
-			<div class="column-2">
-				<div>
+			<div class="flex">
+				<div class="w-1/2">
 					<highlightjs language="c" :autodetect="false" :code="CODE_C_ORI" />
 				</div>
-				<div>
+				<div class="w-1/2">
 					<highlightjs language="c" :autodetect="false" :code="CODE_I" />
 				</div>
 			</div>
@@ -101,44 +103,50 @@
 		</section>
 		<section data-auto-animate data-auto-animate-restart>
 			<h3>Compilation</h3>
-			<img src="../assets/images/BFoCM-compile-c-compiler.svg" />
+			<div class="flex justify-center">
+				<img src="../assets/images/BFoCM-compile-c-compiler.svg" />
+			</div>
 		</section>
 		<section>
 			<h3>Compilation</h3>
 			<div>
 				<highlightjs language="bash" :autodetect="false" code="gcc -S main.i -o main.s" />
 			</div>
-			<div class="column-2">
-				<div>
+			<div class="flex">
+				<div class="w-1/2">
 					<highlightjs language="c" :autodetect="false" :code="CODE_C_ORI" />
 				</div>
-				<div>
+				<div class="w-1/2">
 					<highlightjs language="x86asm" :autodetect="false" :code="CODE_S_X86" />
 				</div>
 			</div>
 		</section>
 		<section>
 			<h3>x86_64 vs ARMv8</h3>
-			<div class="column-2">
-				<div>
+			<div class="flex">
+				<div class="w-1/2">
 					<highlightjs language="x86asm" :autodetect="false" :code="CODE_S_X86" />
 				</div>
-				<div>
+				<div class="w-1/2">
 					<highlightjs language="armasm" :autodetect="false" :code="CODE_S_ARM" />
 				</div>
 			</div>
 		</section>
 		<section>
 			<h3>Assembler</h3>
-			<img src="../assets/images/BFoCM-compile-c-assembler.svg" />
+			<div class="flex justify-center">
+				<img src="../assets/images/BFoCM-compile-c-assembler.svg" />
+			</div>
 		</section>
 		<section>
-			<img src="../assets/images/BFoCM-compile-c-linker.svg" />
+			<div class="flex justify-center">
+				<img src="../assets/images/BFoCM-compile-c-linker.svg" />
+			</div>
 		</section>
 		<section>
 			<h3>C (vs Assembly)</h3>
-			<ul>
-				<li>High Level: C provides a certain level of <span class="strong">abstraction</span> from the hardware<ul>
+			<ul class="text-3xl">
+				<li>High Level: C provides a certain level of <span class="font-bold text-red-500">abstraction</span> from the hardware<ul>
 					<li class="fragment">Data types and operations are platform dependent</li>
 				</ul></li>
 				<li>Portability: It's easy to convert from C to machine code<ul>
@@ -197,22 +205,13 @@ const CODE_I = [
 </script>
 
 <style scoped>
-.strong {
-	font-weight: bold;
-	color: red;
-}
-
-.grid > img {
+.icon-container > img {
 	width: 100px;
 }
 
 /* extra rules for the logo of Rust */
-.reveal-root-theme-black .grid.lang > img:last-child {
+.reveal-root-theme-black .icon-container.lang > img:last-child {
 	background-color: #fff;
-}
-
-.column-2 {
-	display: flex;
 }
 </style>
 
