@@ -3,7 +3,9 @@
 		<h3>We can also build circuits to store data</h3>
 	</section>
 	<section>
-		<img src="../../assets/images/BFoCM-2-inverters-back-to-back.svg">
+		<div class="flex justify-center">
+			<img src="../../assets/images/BFoCM-2-inverters-back-to-back.svg" />
+		</div>
 		<table class="fragment" data-fragment-index="1">
 			<tr>
 				<td>A</td>
@@ -24,15 +26,27 @@
 	</section>
 	<section>
 		<h3 class="fragment">D Latch</h3>
-		<img src="../../assets/images/BFoCM-D-Latch.svg">
+		<div class="flex justify-center">
+			<img src="../../assets/images/BFoCM-D-Latch.svg" />
+		</div>
 	</section>
 	<section>
 		<h3 class="fragment">S-R Latch</h3>
-		<img src="../../assets/images/BFoCM-S-R-Latch.svg">
+		<div class="flex justify-center">
+			<img src="../../assets/images/BFoCM-S-R-Latch.svg" />
+		</div>
 	</section>
 	<section>
-		<h3 class="fragment">4-bit Register</h3>
-		<img src="../../assets/images/BFoCM-4-bit-register.svg">
+		<h3 class="fragment" data-fragment-index="1">4-bit Register</h3>
+		<div class="flex justify-center">
+			<img src="../../assets/images/BFoCM-4-bit-register.svg" class="scale-150 fragment custom" data-fragment-index="1"/>
+		</div>
 	</section>
 </template>
+
+<style scoped>
+.fragment.scale-150.visible {
+	transform: initial;
+}
+</style>
 

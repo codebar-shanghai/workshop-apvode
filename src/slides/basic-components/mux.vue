@@ -13,7 +13,9 @@
 	</section>
 	<section data-auto-animate>
 		<h3>4-bit Mux</h3>
-		<img src="../../assets/images/BFoCM-4-bit-mux.svg">
+		<div class="flex justify-center">
+			<img src="../../assets/images/BFoCM-4-bit-mux.svg" />
+		</div>
 	</section>
 </template>
 
