@@ -49,7 +49,7 @@ import {
 
 // types
 type ModalMethods = {
-	show: () => void;
+	show: (callback?: Function) => void;
 };
 
 type RevealEvent = Event & {
@@ -59,6 +59,7 @@ type RevealEvent = Event & {
 
 // refs
 const timelineModal: Ref<ModalMethods | null> = ref(null);
+const commonModal:   Ref<ModalMethods | null> = ref(null);
 
 onMounted(() => {
 	const deck = new Reveal({
@@ -92,6 +93,12 @@ function open_timeline() {
 	timelineModal.value!.show();
 }
 
+const commonModalContent = ref("");
+function open_common_modal(vHTML: string) {
+	commonModalContent.value = vHTML;
+	commonModal.value!.show(() => commonModalContent.value = "");
+}
+provide("open_common_modal", { open_common_modal });
 </script>
 
 <template>
@@ -128,6 +135,9 @@ function open_timeline() {
 		<Modal ref="timelineModal">
 			<Timeline />
 		</Modal>
+		<Modal ref="commonModal">
+			<div v-html="commonModalContent"></div>
+		</modal>
 	</div>
 </template>
 
