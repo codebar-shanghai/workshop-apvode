@@ -89,8 +89,8 @@
 						<li class="fragment">CPU fetches, interprets, and executes successive instructions of the program</li>
 					</ul>
 				</div>
-				<div class="fragment">
-					<img src="../assets/images/BFoCM-von-neumann-computer.svg" />
+				<div class="fragment" @click="open_modal">
+					<img ref="vNCImg" src="../assets/images/BFoCM-von-neumann-computer.svg" />
 				</div>
 			</div>
 		</section>
@@ -134,11 +134,28 @@
 </template>
 
 <script setup lang="ts">
+import {
+	inject,
+	Ref,
+	ref,
+} from "vue";
+
 const CODE_1 = `int x, y;
 y = x - 37;`;
 
 const CODE_2 = `R1 <- Mem[0x1008]
 R1 <- R1 - 37`;
+
+interface ModalFunctions {
+	open_common_modal: (content: string) => void;
+}
+const x = inject<ModalFunctions>("open_common_modal");
+
+const vNCImg: Ref<HTMLImageElement | null> = ref(null);
+
+function open_modal() {
+	x!.open_common_modal(vNCImg.value!.outerHTML);
+}
 </script>
 
 <style scoped>
