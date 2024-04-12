@@ -7,6 +7,16 @@ h2, h3, h4 {
 	text-transform: none !important;
 }
 
+sub {
+	bottom: 0.1em !important;
+	font-size: 0.6em !important;
+}
+
+sup {
+	top: 0.1em !important;
+	font-size: 0.6em !important;
+}
+
 .reveal-root-theme-black table.problem-stack .ps-sw {
 	background: #3253a8;
 }
