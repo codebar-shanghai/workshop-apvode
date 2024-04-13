@@ -19,7 +19,6 @@
 
 <script setup lang="ts">
 import {
-	defineProps,
 	onMounted,
 	PropType,
 	ref,

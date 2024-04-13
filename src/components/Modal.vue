@@ -11,7 +11,6 @@
 
 <script setup lang="ts">
 import {
-	defineExpose,
 	ref,
 } from "vue";
 
