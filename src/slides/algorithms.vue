@@ -2,19 +2,23 @@
 	<section>
 		<section>
 			<h3>Finally the Last Piece</h3>
-			<ProblemStack6 />
+			<ProblemStack6 class="text-3xl" />
 		</section>
 		<section>
-			<h3>
+			<h3 class="m-0">
 				<a href="https://en.wikipedia.org/wiki/Flip_book">Flipbook</a>
 			</h3>
-			<img src="../assets/images/1868_linett_kineograph_patent_fig._III.jpg" />
+			<div class="flex justify-center">
+				<img class="scale-50 m-0" src="../assets/images/1868_linett_kineograph_patent_fig._III.jpg" />
+			</div>
 		</section>
 		<section>
 			<h3>Video Encoding &amp; Decoding</h3>
-			<a href="https://www.eetimes.com/how-video-compression-works/">
-				<img src="../assets/images/media-1067086-mar04fig1still.gif" />
-			</a>
+			<div class="flex justify-center">
+				<a href="https://www.eetimes.com/how-video-compression-works/">
+					<img src="../assets/images/media-1067086-mar04fig1still.gif" />
+				</a>
+			</div>
 		</section>
 		<section>
 			<h3>Commonly Used Algorithms</h3>
@@ -44,7 +48,7 @@
 			</ul>
 		</section>
 		<section>
-			<ProblemStack6 />
+			<ProblemStack6 class="text-3xl" />
 		</section>
 	</section>
 </template>
