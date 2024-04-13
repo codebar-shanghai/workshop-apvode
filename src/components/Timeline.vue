@@ -66,6 +66,7 @@ const RAW_EVENTS: { name: string; day: string; group: GROUP; text?: string }[] =
 	{ day: "1981",       group: GRP_HW, name: "IBM PC" },
 	{ day: "1981",       group: GRP_OS, name: "MS-DOS" },
 	{ day: "1983-01-01", group: GRP_NP, name: "TCP/IP (Internet)" },
+	{ day: "1983-01-19", group: GRP_HW, name: "Apple Lisa" },
 	{ day: "1982",       group: GRP_OS, name: "HP-UX" },
 	{ day: "1982-02-24", group: GRP_MC, name: "Sun Microsystems" },
 	{ day: "1983-06-07", group: GRP_DB, name: "DB2" },
