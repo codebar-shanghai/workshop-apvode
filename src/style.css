@@ -53,6 +53,10 @@ code.hljs span.hljs-comment {
 	font-style: italic !important;
 }
 
+.tl-timegroup .tl-timegroup-message {
+	color: #a2a2a2;
+}
+
 /** overwrite */
 table.text-lg {
 	font-size: 28px;
