@@ -1,12 +1,15 @@
 <template>
 	<section :id="section_id">
-		<h3 class="fragment" data-fragment-index="2">
+		<h3 class="fragment" data-fragment-index="6">
 			<slot name="header"></slot>
 		</h3>
+		<div class="flex justify-center fragment" data-fragment-index="5">
+			<slot name="symbol"></slot>
+		</div>
 		<div class="w-full flex justify-center">
 			<div ref="refDivSimulator" :style="simulatorStyleObject"></div>
 		</div>
-		<div class="fragment" data-fragment-index="1">
+		<div class="fragment" data-fragment-index="0">
 			<slot name="tftable"></slot>
 		</div>
 	</section>

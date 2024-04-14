@@ -8,7 +8,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr v-for="row in rows">
+			<tr v-for="(row, idx) in rows" class="fragment" :data-fragment-index="idx + 1">
 				<td>{{row[0]}}</td>
 				<td>{{row[1]}}</td>
 				<td>{{row[2]}}</td>

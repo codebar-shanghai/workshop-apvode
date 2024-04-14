@@ -31,6 +31,9 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 			canvas_width="340"
 		>
 			<template #header>NOT</template>
+			<template #symbol>
+				<img class="bg-white scale-150" src="../lib/LCSReader/images/NOT.svg" />
+			</template>
 			<template #tftable>
 				<table class="text-lg text-center">
 					<thead>
@@ -40,11 +43,11 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr class="fragment" data-fragment-index="1">
 							<td>0</td>
 							<td>1</td>
 						</tr>
-						<tr>
+						<tr class="fragment" data-fragment-index="2">
 							<td>1</td>
 							<td>0</td>
 						</tr>
@@ -59,6 +62,9 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 			canvas_width="420"
 		>
 			<template #header>AND</template>
+			<template #symbol>
+				<img class="bg-white scale-150" src="../lib/LCSReader/images/AND.svg" />
+			</template>
 			<template #tftable>
 				<TruthTable method="and" />
 			</template>
@@ -70,6 +76,9 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 			canvas_width="380"
 		>
 			<template #header>OR</template>
+			<template #symbol>
+				<img class="bg-white scale-150" src="../lib/LCSReader/images/OR.svg" />
+			</template>
 			<template #tftable>
 				<TruthTable method="or" />
 			</template>
@@ -81,6 +90,9 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 			canvas_width="380"
 		>
 			<template #header>NOR</template>
+			<template #symbol>
+				<img class="bg-white scale-150" src="../lib/LCSReader/images/NOR.svg" />
+			</template>
 			<template #tftable>
 				<TruthTable method="nor" />
 			</template>
@@ -92,6 +104,9 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 			canvas_width="480"
 		>
 			<template #header>XOR</template>
+			<template #symbol>
+				<img class="bg-white scale-150" src="../lib/LCSReader/images/XOR.svg" />
+			</template>
 			<template #tftable>
 				<TruthTable method="xor" />
 			</template>
