@@ -90,7 +90,7 @@
 			<highlightjs language="plaintext" :autodetect="false" :code="OUTPUT_EVT" />
 		</section>
 		<section>
-			<h3>General JVM Implementation</h3>
+			<h3>General JVM Implementations</h3>
 			<table>
 				<tr>
 					<td></td>
