@@ -116,6 +116,22 @@
 			<h3>Yes</h3>
 			<div>Java, Python, Node.js, ...</div>
 		</section>
+		<section>
+			<div>Now let's take a look at this code for the <span class="text-red-500">4th</span> time</div>
+			<highlightjs language="c" :autodetect="false" :code="CODE_OPEN" />
+		</section>
+		<section>
+			<h3><span class="mono">open(2)</span></h3>
+			<highlightjs language="plaintext" :autodetect="false" :code="MAN_OPEN_2" />
+		</section>
+		<section>
+			<h3><a href="https://nodejs.org/api/fs.html#fsopenpath-flags-mode-callback" class="mono">fs.open()</a> in Node.js</h3>
+			<highlightjs language="plaintext" :autodetect="false" :code="MAN_N_OPEN" />
+		</section>
+		<section>
+			<h3><a href="https://docs.python.org/3/library/os.html#os.open" class="mono">os.open()</a> in Python</h3>
+			<highlightjs language="plaintext" :autodetect="false" :code="MAN_P_OPEN" />
+		</section>
 		<section data-auto-animate>
 			<h3>A Quick Comparison of Languages</h3>
 			<table>
@@ -222,6 +238,11 @@
 </template>
 
 <script setup lang="ts">
+import CODE_OPEN    from "../assets/code/fd.c?raw";
+import MAN_OPEN_2   from "../assets/man/open.2.txt?raw";
+import MAN_N_OPEN   from "../assets/man/nodejs.fs.open.txt?raw";
+import MAN_P_OPEN   from "../assets/man/python.os.open.txt?raw";
+
 const JVM_LANGUAGE_ICONS = [
 	{ name: "Scala", icon: "scala/scala-original.svg", },
 	{ name: "Kotlin", icon: "kotlin/kotlin-original.svg", },

@@ -1,0 +1,17 @@
+NAME
+    open, openat, creat - open and possibly create a file
+
+SYNOPSIS
+    int open(const char *pathname, int flags);
+
+DESCRIPTION
+    The open() system call opens the file specified by pathname.
+    If the specified  file  does  not  exist, it may optionally
+    (if O_CREAT is specified in flags) be created by open().
+
+    The  return  value of open()  is a file descriptor, a small,
+    nonnegative integer that  is used in subsequent system calls
+    (read(2),  write(2), lseek(2),  fcntl(2),  etc.) to refer to
+    the open file. The file descriptor returned by a successful
+    call will be the lowest-numbered file descriptor not curren-
+    tly open for the process.

@@ -1,0 +1,17 @@
+fs.open(path[, flags[, mode]], callback)
+
+* path <string> | <Buffer> | <URL>
+* flags <string> | <number> See support of file system flags.
+  Default: 'r'.
+* mode <string> | <integer> Default: 0o666 (readable and writable)
+* callback <Function>
+    * err <Error>
+    * fd <integer>
+
+    Asynchronous file open. See the POSIX open(2) documentation
+    for more details.
+
+    mode sets  the  file mode (permission and sticky bits), but
+    only  if the file was created.  On Windows,  only the write
+    permission can be manipulated; see fs.chmod().
+
