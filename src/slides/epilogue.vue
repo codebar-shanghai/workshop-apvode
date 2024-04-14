@@ -16,7 +16,7 @@
 				<li>(Open Course) CMU 18-447 Introduction to Computer Architecture</li>
 				<li>(Book) Operating Systems: Design and Implementation, 3e</li>
 				<li>(Book) Computer Systems: A Programmer's Perspective, 3e</li>
-				<li>(link) <a href="https://exclusivearchitecture.com/03-technical-articles-IC-00-table-of-contents.html">How microchips work</a></li>
+				<li>(Link) <a href="https://exclusivearchitecture.com/03-technical-articles-IC-00-table-of-contents.html">How microchips work</a></li>
 				<li>(Link) <a href="https://www.computerhistory.org/timeline/">Timeline of Computer History</a></li>
 				<li>(Link) <a href="https://www.hanselman.com/blog/whats-the-difference-between-a-console-a-terminal-and-a-shell">What's the difference between a console, a terminal, and a shell?</a></li>
 				<li>(Source) <a href="https://github.com/drendog/Logic-Circuit-Simulator">Logic Circuit Simulator</a></li>
@@ -38,11 +38,21 @@
 			</ul>
 		</section>
 		<section data-transition="slide-in fade-out">
-			<h3>May the force be with you.</h3>
-		</section>
-		<section data-transition="slide-out fade-in">
-			<h3>May the SOURCE be with you.</h3>
+			<h3>May the <span class="fragment custom show" data-fragment-index="1">force</span><span class="fragment custom hidden" data-fragment-index="1">SOURCE</span> be with you.</h3>
 		</section>
 	</section>
 </template>
+
+<style>
+.fragment.hidden {
+	display: none;
+}
+.fragment.hidden.visible {
+	display: inline;
+}
+
+.fragment.show.visible {
+	display: none;
+}
+</style>
 
