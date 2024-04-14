@@ -52,6 +52,8 @@ jobs:
 
       - name: Build
         run: pnpm build
+        env:
+          VITE_REPO_NAME: '/workshop-bfocm/'
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
