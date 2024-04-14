@@ -59,6 +59,7 @@ type RevealEvent = Event & {
 
 // refs
 const timelineModal: Ref<ModalMethods | null> = ref(null);
+const gateModal:     Ref<ModalMethods | null> = ref(null);
 const commonModal:   Ref<ModalMethods | null> = ref(null);
 
 onMounted(() => {
@@ -93,6 +94,10 @@ function open_timeline() {
 	timelineModal.value!.show();
 }
 
+function open_gates() {
+	gateModal.value!.show();
+}
+
 const commonModalContent = ref("");
 function open_common_modal(vHTML: string) {
 	commonModalContent.value = vHTML;
@@ -106,6 +111,9 @@ provide("open_common_modal", { open_common_modal });
 		<div class="bfocm-toolbar">
 			<div class="btn" @click="toggle_theme">
 				<fa icon="fa-regular fa-lightbulb" />
+			</div>
+			<div class="btn" @click="open_gates">
+				<fa icon="fa-soid fa-microchip" />
 			</div>
 			<div class="btn" @click="open_timeline">
 				<fa icon="fa-solid fa-timeline" />
@@ -135,6 +143,9 @@ provide("open_common_modal", { open_common_modal });
 		<Modal ref="timelineModal">
 			<Timeline />
 		</Modal>
+		<modal ref="gateModal">
+			<img src="./assets/images/Overview_All_Gates_Updated_01.png" />
+		</modal>
 		<Modal ref="commonModal">
 			<div v-html="commonModalContent"></div>
 		</modal>

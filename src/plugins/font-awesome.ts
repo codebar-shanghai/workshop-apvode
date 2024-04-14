@@ -1,6 +1,7 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 import {
+	faMicrochip,
 	faTimeline,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,6 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 library.add(faLightbulb);
+library.add(faMicrochip);
 library.add(faTimeline);
 
 export {
