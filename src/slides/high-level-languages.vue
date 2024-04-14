@@ -69,13 +69,25 @@
 				<li>Robust Ecosystem</li>
 			</ul>
 		</section>
-		<section>
+		<section data-auto-animate>
 			<h3>No Free Lunch</h3>
 			<ul>
 				<li>Full GC is a Stop-The-World (STW) event</li>
 				<li>Generics (J2SE 5.0) / Lambda Expression (Java 8)</li>
 				<li>Understanding JVM</li>
 			</ul>
+		</section>
+		<section data-auto-animate>
+			<h3>No Free Lunch</h3>
+			<div>No only in JVM...</div>
+		</section>
+		<section data-auto-animate>
+			<h3>Event Loop in Node.js</h3>
+			<highlightjs language="javascript" :autodetect="false" :code="CODE_EVT_LP" />
+		</section>
+		<section data-auto-animate>
+			<h3>Event Loop in Node.js</h3>
+			<highlightjs language="plaintext" :autodetect="false" :code="OUTPUT_EVT" />
 		</section>
 		<section>
 			<h3>General JVM Implementation</h3>
@@ -238,6 +250,8 @@
 </template>
 
 <script setup lang="ts">
+import CODE_EVT_LP  from "../assets/code/event_loop.js?raw";
+import OUTPUT_EVT   from "../assets/code/event_loop.txt?raw";
 import CODE_OPEN    from "../assets/code/fd.c?raw";
 import MAN_OPEN_2   from "../assets/man/open.2.txt?raw";
 import MAN_N_OPEN   from "../assets/man/nodejs.fs.open.txt?raw";

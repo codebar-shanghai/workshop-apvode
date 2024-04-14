@@ -1,0 +1,9 @@
+$ node event_loop.js
+first
+third (while loop)
+third (while loop)
+third (while loop)
+.....
+third (while loop)
+third (while loop)
+second (timeout)
