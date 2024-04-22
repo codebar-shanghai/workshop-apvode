@@ -157,6 +157,10 @@
 				<li class="fragment">If there're some parts of the program need to use specific hardware features, it's possible to write code with assembly languages then compile with other parts in C together</li>
 			</ul>
 		</section>
+		<section>
+			<h3>C w/ Assembly</h3>
+			<highlightjs language="c" :autodetect="false" :code="CODE_C_ASM" />
+		</section>
 	</section>
 </template>
 
@@ -169,6 +173,8 @@ import CODE_S_X86 from "../assets/code/main.s.x86?raw";
 import CODE_CALLEE_C from "../assets/code/callee.c?raw";
 import CODE_CALLEE_H from "../assets/code/callee.h?raw";
 import CODE_CALLER_C from "../assets/code/caller.c?raw";
+
+import CODE_C_ASM from "../assets/code/c_asm.c?raw";
 
 const LANG_ICONS = [
 	"cplusplus/cplusplus-original.svg",
