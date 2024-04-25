@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {
 	computed,
+	defineAsyncComponent,
 	onMounted,
 	provide,
 	ref,
@@ -19,8 +20,8 @@ const theme_name = computed(() => {
 	return `reveal-root-theme-${dark_mode.value ? "black" : "white"}`;
 });
 
-import Timeline from "./components/Timeline.vue";
-import Modal from "./components/Modal.vue";
+const Timeline = defineAsyncComponent(() => import("./components/Timeline.vue"));
+const Modal    = defineAsyncComponent(() => import("./components/Modal.vue"));
 
 // slides
 import Algorithms             from "./slides/algorithms.vue";
@@ -143,9 +144,9 @@ provide("open_common_modal", { open_common_modal });
 		<Modal ref="timelineModal">
 			<Timeline />
 		</Modal>
-		<modal ref="gateModal">
+		<Modal ref="gateModal">
 			<img src="./assets/images/Overview_All_Gates_Updated_01.png" />
-		</modal>
+		</Modal>
 		<Modal ref="commonModal">
 			<div v-html="commonModalContent"></div>
 		</modal>
