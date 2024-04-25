@@ -59,20 +59,20 @@
 		<section data-auto-animate>
 			<h3>Hi Stack</h3>
 			<div class="flex justify-center">
-				<img src="../assets/images/premium_photo-1679255807252-3c568399dfc2.avif" />
+				<img data-src="../assets/images/premium_photo-1679255807252-3c568399dfc2.avif" />
 			</div>
 		</section>
 		<section data-auto-animate>
 			<h3>Hi Stack</h3>
 			<div>Tower of Hanoi</div>
 			<div class="flex justify-center">
-				<img src="../assets/images/Tower_of_Hanoi.jpeg" />
+				<img data-src="../assets/images/Tower_of_Hanoi.jpeg" />
 			</div>
 			<div class="fragment">First-In-Last-Out (or Last-In-First-Out)</div>
 		</section>
 		<section data-auto-animate>
 			<h3>Memory Hierarchy</h3>
-			<img src="../assets/images/BFoCM-memory-hierarchy.png" />
+			<img data-src="../assets/images/BFoCM-memory-hierarchy.png" />
 		</section>
 		<section data-auto-animate>
 			<h3>Memory Hierarchy</h3>

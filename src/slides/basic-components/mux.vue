@@ -2,7 +2,7 @@
 	<section data-auto-animate>
 		<h3>Mux (Multiplexer)</h3>
 		<div class="flex justify-center">
-			<img src="../../assets/images/BFoCM-mux.svg" />
+			<img data-src="../../assets/images/BFoCM-mux.svg" />
 		</div>
 	</section>
 	<section data-auto-animate :id="section_id">
@@ -14,7 +14,7 @@
 	<section data-auto-animate>
 		<h3>4-bit Mux</h3>
 		<div class="flex justify-center">
-			<img src="../../assets/images/BFoCM-4-bit-mux.svg" />
+			<img data-src="../../assets/images/BFoCM-4-bit-mux.svg" />
 		</div>
 	</section>
 </template>

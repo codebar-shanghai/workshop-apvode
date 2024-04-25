@@ -9,14 +9,14 @@
 				<a href="https://en.wikipedia.org/wiki/Flip_book">Flipbook</a>
 			</h3>
 			<div class="flex justify-center">
-				<img class="scale-50 m-0" src="../assets/images/1868_linett_kineograph_patent_fig._III.jpg" />
+				<img class="scale-50 m-0" data-src="../assets/images/1868_linett_kineograph_patent_fig._III.jpg" />
 			</div>
 		</section>
 		<section>
 			<h3>Video Encoding &amp; Decoding</h3>
 			<div class="flex justify-center">
 				<a href="https://www.eetimes.com/how-video-compression-works/">
-					<img src="../assets/images/media-1067086-mar04fig1still.gif" />
+					<img data-src="../assets/images/media-1067086-mar04fig1still.gif" />
 				</a>
 			</div>
 		</section>

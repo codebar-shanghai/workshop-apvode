@@ -4,7 +4,7 @@
 	</section>
 	<section>
 		<div class="flex justify-center">
-			<img src="../../assets/images/BFoCM-2-inverters-back-to-back.svg" />
+			<img data-src="../../assets/images/BFoCM-2-inverters-back-to-back.svg" />
 		</div>
 		<table class="fragment" data-fragment-index="1">
 			<tr>
@@ -27,19 +27,19 @@
 	<section>
 		<h3 class="fragment">D Latch</h3>
 		<div class="flex justify-center">
-			<img src="../../assets/images/BFoCM-D-Latch.svg" />
+			<img data-src="../../assets/images/BFoCM-D-Latch.svg" />
 		</div>
 	</section>
 	<section>
 		<h3 class="fragment">S-R Latch</h3>
 		<div class="flex justify-center">
-			<img src="../../assets/images/BFoCM-S-R-Latch.svg" />
+			<img data-src="../../assets/images/BFoCM-S-R-Latch.svg" />
 		</div>
 	</section>
 	<section>
 		<h3 class="fragment" data-fragment-index="1">4-bit Register</h3>
 		<div class="flex justify-center">
-			<img src="../../assets/images/BFoCM-4-bit-register.svg" class="scale-150 fragment custom" data-fragment-index="1"/>
+			<img data-src="../../assets/images/BFoCM-4-bit-register.svg" class="scale-150 fragment custom" data-fragment-index="1"/>
 		</div>
 	</section>
 </template>

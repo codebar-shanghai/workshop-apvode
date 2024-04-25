@@ -1,12 +1,12 @@
 <template>
 	<section>
 		<section>
-			<img src="../assets/images/IMG_2090.jpeg">
+			<img data-src="../assets/images/IMG_2090.jpeg">
 		</section>
 		<section>
 			<h3>Batch Systems in Mid 1950s</h3>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-batch-system.png" />
+				<img data-src="../assets/images/BFoCM-batch-system.png" />
 			</div>
 			<div class="italic text-lg">Source: A. S. Tanenbaum, Operating Systems</div>
 		</section>
@@ -34,12 +34,12 @@
 			<div>on a small DEC PDP-8 minicomputer</div>
 		</section>
 		<section>
-			<img src="../assets/images/Pdp7-oslo-2005.jpeg">
+			<img data-src="../assets/images/Pdp7-oslo-2005.jpeg">
 		</section>
 		<section>
 			<h3>K. Thompson & D. Ritchie at PDP-11</h3>
 			<a href="https://www.bell-labs.com/usr/dmr/www/picture.html">
-				<img src="../assets/images/ken-and-den.jpg">
+				<img data-src="../assets/images/ken-and-den.jpg">
 			</a>
 		</section>
 		<section>
@@ -57,7 +57,7 @@
 		<section>
 			<h3>The UNIX Family Tree</h3>
 			<a href="https://en.wikipedia.org/wiki/History_of_Unix">
-				<img src="../assets/images/Unix_history-simple.svg">
+				<img data-src="../assets/images/Unix_history-simple.svg">
 			</a>
 		</section>
 		<section>
@@ -72,17 +72,17 @@
 		</section>
 		<section>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-programming-against-hw.svg" />
+				<img data-src="../assets/images/BFoCM-programming-against-hw.svg" />
 			</div>
 		</section>
 		<section data-auto-animate>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-programming-against-os.svg" />
+				<img data-src="../assets/images/BFoCM-programming-against-os.svg" />
 			</div>
 		</section>
 		<section data-auto-animate>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-programming-against-os.svg" />
+				<img data-src="../assets/images/BFoCM-programming-against-os.svg" />
 			</div>
 			<h3>Processes vs Program</h3>
 			<ul class="text-3xl">
@@ -93,7 +93,7 @@
 		</section>
 		<section data-auto-animate>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-programming-against-os.svg" />
+				<img data-src="../assets/images/BFoCM-programming-against-os.svg" />
 			</div>
 			<h3>Programmer's View of OS</h3>
 			<ul class="text-3xl">

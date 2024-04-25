@@ -12,7 +12,7 @@
 			<h3>Terminals</h3>
 			<div class="flex justify-center">
 				<a href="https://www.flickr.com/photos/16057786@N00/1678948976">
-					<img src="../assets/images/1678948976_14529e3278_c.jpg" />
+					<img data-src="../assets/images/1678948976_14529e3278_c.jpg" />
 				</a>
 			</div>
 		</section>
@@ -38,14 +38,14 @@
 			<h3>Consoles</h3>
 			<div class="flex justify-center">
 				<a href="https://www.flickr.com/photos/ajmexico/3281139507/">
-					<img src="../assets/images/3281139507_f56091fa84_z.jpg" />
+					<img data-src="../assets/images/3281139507_f56091fa84_z.jpg" />
 				</a>
 			</div>
 		</section>
 		<section>
 			<div class="flex justify-center">
 				<a href="https://en.wikipedia.org/wiki/VT100">
-					<img src="../assets/images/DEC_VT100_terminal.jpg" />
+					<img data-src="../assets/images/DEC_VT100_terminal.jpg" />
 				</a>
 			</div>
 		</section>
@@ -58,7 +58,7 @@
 		</section>
 		<section>
 			<div class="flex justify-center">
-				<img src="../assets/images/image_e3c2af63-3682-44c6-89b3-4c7d09f0fcf4.png" />
+				<img data-src="../assets/images/image_e3c2af63-3682-44c6-89b3-4c7d09f0fcf4.png" />
 			</div>
 		</section>
 		<section>
