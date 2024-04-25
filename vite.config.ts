@@ -3,6 +3,7 @@ import {
 	splitVendorChunkPlugin,
 } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { visualizer } from "rollup-plugin-visualizer";
 
 const repoName = process.env.VITE_REPO_NAME || '/';
 
@@ -18,6 +19,7 @@ export default defineConfig({
 			},
 		}),
 		splitVendorChunkPlugin(),
+		visualizer(),
 	],
 	server: {
 		host: true,
