@@ -1,3 +1,7 @@
+import {
+	ref,
+} from "vue";
+
 type Callback = () => void;
 
 export const constructors = new Map<string, Callback>();
@@ -20,5 +24,10 @@ export function register_resource(cfg: {
 export function deregister_resource(id: string) {
 	constructors.delete(id);
 	destructors.delete(id);
+}
+
+export const component_counter = ref(0);
+export function component_loaded() {
+	component_counter.value++;
 }
 

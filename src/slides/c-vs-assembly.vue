@@ -208,6 +208,16 @@ const CODE_I = [
 	...tmp.slice(-6),
 ].join("\n");
 
+import {
+	onMounted,
+} from "vue";
+import {
+	component_loaded,
+} from "../lib/ResourceManager.ts";
+
+onMounted(() => {
+	component_loaded();
+});
 </script>
 
 <style scoped>

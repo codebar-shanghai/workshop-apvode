@@ -60,6 +60,16 @@
 </template>
 
 <script setup lang="ts">
+import {
+	onMounted,
+} from "vue";
+import {
+	component_loaded,
+} from "../lib/ResourceManager.ts";
+
+onMounted(() => {
+	component_loaded();
+});
 import CODE_OPEN    from "../assets/code/fd.c?raw";
 import CODE_PRINTF  from "../assets/code/main.c?raw";
 import CODE_FPRINTF from "../assets/code/main2.c?raw";

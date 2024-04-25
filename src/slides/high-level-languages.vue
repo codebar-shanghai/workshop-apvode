@@ -265,6 +265,16 @@ const JVM_LANGUAGE_ICONS = [
 	{ name: "JRuby", icon: "ruby/ruby-original.svg", },
 	{ name: "JPython", icon: "python/python-original.svg", },
 ];
+import {
+	onMounted,
+} from "vue";
+import {
+	component_loaded,
+} from "../lib/ResourceManager.ts";
+
+onMounted(() => {
+	component_loaded();
+});
 </script>
 
 <style>

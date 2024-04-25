@@ -17,6 +17,16 @@
 
 <script setup lang="ts">
 import ProblemStack5 from "../components/problem-stack-5.vue";
+import {
+	onMounted,
+} from "vue";
+import {
+	component_loaded,
+} from "../lib/ResourceManager.ts";
+
+onMounted(() => {
+	component_loaded();
+});
 </script>
 
 <style scoped>
