@@ -6,7 +6,7 @@ import { LogicInput } from "./LogicInput";
 import { LogicOutput } from "./LogicOutput";
 import { Gate } from "./Gate";
 
-function is_string(s: any) {
+function is_string(s: any): s is string {
 	return typeof s == "string" || s instanceof String;
 }
 
@@ -88,7 +88,7 @@ export class FileManager {
 
 	loadFile_ex(str: string | LCConfig) {
 		try {
-			const content = is_string(str) ? JSON.parse(str as string) : str;
+			const content = is_string(str) ? JSON.parse(str) : str;
 
 			_convert_json_to_obj(content, {
 				key: "logicInput",
