@@ -50,8 +50,8 @@ export class Gate {
 		this.input.push(new Node(simulator, this.posX, this.posY + 15));
 		if (this.type != GateType.NOT) {
 			this.input.push(new Node(simulator, this.posX, this.posY + this.height - 15));
-			this.input[0]!.setBrother(this.input[1]!);
-			this.input[1]!.setBrother(this.input[0]!);
+			this.input[0]!.Brother = this.input[1]!;
+			this.input[1]!.Brother = this.input[0]!;
 		}
 
 		this.output = new Node(simulator, this.posX + this.width, this.posY + this.height / 2, true);
@@ -106,28 +106,31 @@ export class Gate {
 
 	refreshNodes() {
 		let currentID = this.nodeStartID;
-		this.input[0]?.setID(currentID);
-		currentID++;
-		if (this.type != GateType.NOT) {
-			this.input[1]?.setID(currentID);
-			currentID++;
+		for (let i = 0; i < this.input.length; i++) {
+			if (this.input[i] != null) {
+				this.input[i]!.ID = currentID;
+				currentID++;
+			}
 		}
-		this.output?.setID(currentID);
+		if (this.output)
+			this.output.ID = currentID;
 	}
 
 	generateOutput() {
-		this.output?.setValue(this.calculateValue());
+		if (this.output) {
+			this.output.Value = this.calculateValue();
+		}
 	}
 
 	calculateValue() {
 		switch (this.type) {
-			case GateType.NOT:  return !this.input[0]!.getValue();
-			case GateType.AND:  return this.input[0]!.getValue() && this.input[1]!.getValue();
-			case GateType.NAND: return !(this.input[0]!.getValue() && this.input[1]!.getValue());
-			case GateType.OR:   return this.input[0]!.getValue() || this.input[1]!.getValue();
-			case GateType.NOR:  return !(this.input[0]!.getValue() || this.input[1]!.getValue());
-			case GateType.XOR:  return this.input[0]!.getValue() != this.input[1]!.getValue();
-			case GateType.XNOR: return this.input[0]!.getValue() == this.input[1]!.getValue();
+			case GateType.NOT:  return !this.input[0]!.Value;
+			case GateType.AND:  return this.input[0]!.Value && this.input[1]!.Value;
+			case GateType.NAND: return !(this.input[0]!.Value && this.input[1]!.Value);
+			case GateType.OR:   return this.input[0]!.Value || this.input[1]!.Value;
+			case GateType.NOR:  return !(this.input[0]!.Value || this.input[1]!.Value);
+			case GateType.XOR:  return this.input[0]!.Value != this.input[1]!.Value;
+			case GateType.XNOR: return this.input[0]!.Value == this.input[1]!.Value;
 			default: return false;
 		}
 	}

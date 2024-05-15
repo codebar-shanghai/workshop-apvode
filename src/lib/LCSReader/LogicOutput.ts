@@ -97,7 +97,9 @@ implements
 	}
 
 	refreshNodes() {
-		this.input?.setID(this.nodeStartID);
+		if (this.input) {
+			this.input.ID = this.nodeStartID;
+		}
 	}
 
 	isMouseOver() {

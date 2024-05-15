@@ -99,7 +99,9 @@ implements
 	}
 
 	refreshNodes() {
-		this.output?.setID(this.nodeStartID);
+		if (this.output) {
+			this.output.ID = this.nodeStartID;
+		}
 	}
 
 	printInfo() {

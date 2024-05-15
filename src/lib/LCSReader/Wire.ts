@@ -81,11 +81,11 @@ export class Wire {
 		if ((this.startNode.isOutput && this.endNode!.isOutput) ||
 			(!this.startNode.isOutput && !this.endNode!.isOutput)) {
 			// short circuit
-			this.startNode.setValue(this.startNode.getValue() ||
-				this.endNode!.getValue());
-			this.endNode!.setValue(this.startNode.getValue());
+			this.startNode!.Value = this.startNode!.Value || this.endNode!.Value;
+			this.endNode!.Value = this.startNode!.Value;
 		} else {
-			this.endNode?.setValue(this.startNode.getValue());
+			if (this.endNode)
+				this.endNode.Value = this.startNode!.Value;
 		}
 	}
 

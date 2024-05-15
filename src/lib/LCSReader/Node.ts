@@ -68,7 +68,7 @@ export class Node implements P5Drawable, P5MouseOver {
 		}
 	}
 
-	setID(newID: number) {
+	set ID(newID: number) {
 		this.nodeManager.nodeList[this.id] = undefined;
 		this.id = newID;
 		this.nodeManager.nodeList[this.id] = this;
@@ -78,23 +78,23 @@ export class Node implements P5Drawable, P5MouseOver {
 		}
 	}
 
-	setInputState(state: InputState) {
+	set InputState(state: InputState) {
 		this.inputState = state;
 	}
 
-	setBrother(brotherNode: Node) {
+	set Brother(brotherNode: Node) {
 		this.brotherNode = brotherNode;
 	}
 
-	getBrother() {
+	get Brother(): Node|null {
 		return this.brotherNode;
 	}
 
-	getValue() {
+	get Value() {
 		return this.value;
 	}
 
-	setValue(value: boolean) {
+	set Value(value: boolean) {
 		this.value = value;
 	}
 
