@@ -1,16 +1,18 @@
-import p5 from "p5";
-import { GateType, MouseAction } from "./Enums";
+import { GateType } from "./Enums";
 import {
 	ConvertGateStringToGateType,
-	colorMouseOver,
 	gate_images,
 } from "./Utils";
-import { Node } from "./Node";
-import { currMouseAction } from "./MouseAction";
+import {
+	InputNode,
+	OutputNode,
+} from "./Node";
 import { Simulator } from ".";
+import { IGate } from "./Interfaces";
+import { Image } from "konva/lib/shapes/Image";
+import { Text } from "konva/lib/shapes/Text";
 
 export class Gate {
-	private _p: p5;
 	strType: string;
 	type: GateType;
 	width: number;
@@ -21,41 +23,68 @@ export class Gate {
 	offsetMouseX: number;
 	offsetMouseY: number;
 	isMoving: boolean;
-	input: (Node|undefined)[];
-	output: Node|undefined;
+	input: (InputNode|undefined)[];
+	output: OutputNode|undefined;
 	nodeStartID: number;
-	private _image: p5.Image;
+	private _image: HTMLImageElement;
+	text: Text;
+	image: Image;
 
-	constructor(simulator: Simulator, strType: string) {
-		this._p = simulator._instance;
+	constructor(simulator: Simulator, obj: Partial<IGate> = {}) {
+		this.strType = typeof obj.strType == "string" ? obj.strType : "AND";
+		this.type = ConvertGateStringToGateType(this.strType);
 
-		this.strType = strType;
-		this.type = ConvertGateStringToGateType(strType);
+		if (!gate_images.has(this.type)) {
+			const msg = "Images are not intialized";
+			throw new Error(msg);
+		}
 
-		this._image = gate_images.get(this.type)!; // TODO
+		this._image = gate_images.get(this.type)!;
 		this.width = this._image.width;
 		this.height = this._image.height;
 
-		this.posX = this._p.mouseX - this.width / 2;
-		this.posY = this._p.mouseY - this.height / 2;
+		this.posX = typeof obj.posX == "number" ? obj.posX : 0;
+		this.posY = typeof obj.posY == "number" ? obj.posY : 0;
 
-		this.isSpawned = false;
+		this.image = new Image({
+			x: this.posX,
+			y: this.posY,
+			image: this._image,
+			width: this.width,
+			height: this.height,
+		});
+		simulator._layer.add(this.image);
+		const fontSize = 12;
+		this.text = new Text({
+			x: this.posX + this.width / 4 + 12,
+			y: this.posY + this.height,
+			text: this.strType,
+			fontSize,
+		});
+		simulator._layer.add(this.text);
 
-		this.offsetMouseX = 0;
-		this.offsetMouseY = 0;
+		this.isSpawned = typeof obj.isSpawned == "boolean" ? obj.isSpawned : false;
 
-		this.isMoving = false;
+		this.offsetMouseX = typeof obj.offsetMouseX == "number" ? obj.offsetMouseX : 0;
+		this.offsetMouseY = typeof obj.offsetMouseY == "number" ? obj.offsetMouseY : 0;
+
+		this.isMoving = typeof obj.isMoving == "boolean" ? obj.isMoving : false;
 
 		this.input = [];
-		this.input.push(new Node(simulator, this.posX, this.posY + 15));
+		this.input.push(new InputNode(simulator, this.posX, this.posY + (this.type == GateType.NOT ? this.height / 2 : 15), false, () => {
+			this.generateOutput();
+		}));
 		if (this.type != GateType.NOT) {
-			this.input.push(new Node(simulator, this.posX, this.posY + this.height - 15));
+			this.input.push(new InputNode(simulator, this.posX, this.posY + this.height - 15, false, () => {
+				this.generateOutput();
+			}));
 			this.input[0]!.Brother = this.input[1]!;
 			this.input[1]!.Brother = this.input[0]!;
 		}
 
-		this.output = new Node(simulator, this.posX + this.width, this.posY + this.height / 2, true);
-		this.nodeStartID = this.input[0]!.id;
+		this.output = new OutputNode(simulator, this.posX + this.width, this.posY + this.height / 2);
+		this.output.Value = this.calculateValue();
+		this.nodeStartID = typeof obj.nodeStartID == "number" ? obj.nodeStartID : this.input[0]!.id;
 	}
 
 	destroy() {
@@ -65,43 +94,6 @@ export class Gate {
 		}
 		this.output?.destroy();
 		this.output = undefined;
-	}
-
-	draw() {
-		if (!this.isSpawned) {
-			this.posX = this._p.mouseX - this.width / 2;
-			this.posY = this._p.mouseY - this.height / 2;
-		}
-
-		if (this.isMoving) {
-			this.posX = this._p.mouseX + this.offsetMouseX;
-			this.posY = this._p.mouseY + this.offsetMouseY;
-		}
-
-		if (this.type == GateType.NOT) {
-			this.input[0]!.updatePosition(this.posX, this.posY + this.height / 2);
-		} else {
-			this.input[0]!.updatePosition(this.posX, this.posY + 15);
-			this.input[1]!.updatePosition(this.posX, this.posY + this.height - 15);
-		}
-
-		this.output?.updatePosition(this.posX + this.width, this.posY + this.height / 2);
-
-		if (this.isMouseOver()) {
-			this._p.noFill();
-			this._p.strokeWeight(2);
-			this._p.stroke(colorMouseOver[0], colorMouseOver[1], colorMouseOver[2]);
-			this._p.rect(this.posX, this.posY, this.width, this.height);
-		}
-
-		this._p.image(this._image, this.posX, this.posY);
-
-		for (let i = 0; i < this.input.length; i++) {
-			this.input[i]?.draw();
-		}
-
-		this.generateOutput();
-		this.output?.draw();
 	}
 
 	refreshNodes() {
@@ -133,41 +125,6 @@ export class Gate {
 			case GateType.XNOR: return this.input[0]!.Value == this.input[1]!.Value;
 			default: return false;
 		}
-	}
-
-	isMouseOver() {
-		return this._p.mouseX > this.posX && this._p.mouseX < (this.posX + this.width)
-			&& this._p.mouseY > this.posY && this._p.mouseY < (this.posY + this.height);
-	}
-
-	mousePressed() {
-		if (!this.isSpawned) {
-			this.posX = this._p.mouseX - this.width / 2;
-			this.posY = this._p.mouseY - this.height / 2;
-			this.isSpawned = true;
-			return;
-		}
-
-		if (this.isMouseOver() || currMouseAction.State == MouseAction.MOVE) {
-			this.isMoving = true;
-			this.offsetMouseX = this.posX - this._p.mouseX;
-			this.offsetMouseY = this.posY - this._p.mouseY;
-		}
-	}
-
-	mouseReleased() {
-		this.isMoving = false;
-	}
-
-	mouseClicked() {
-		let result = this.isMouseOver();
-
-		for (let i = 0; i < this.input.length; i++) {
-			result ||= this.input[i]!.mouseClicked();
-		}
-
-		result ||= this.output!.mouseClicked();
-		return result;
 	}
 }
 

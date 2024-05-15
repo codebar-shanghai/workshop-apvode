@@ -25,6 +25,7 @@ const theme_name = computed(() => {
 
 const Timeline = defineAsyncComponent(() => import("./components/Timeline.vue"));
 const Modal    = defineAsyncComponent(() => import("./components/Modal.vue"));
+const PLoader  = defineAsyncComponent(() => import("./components/DummyLCSPreloader.vue"));
 
 // slides
 const Algorithms             = defineAsyncComponent(() => import("./slides/algorithms.vue"));
@@ -166,6 +167,7 @@ provide("open_common_modal", { open_common_modal });
 		<Modal ref="commonModal">
 			<div v-html="commonModalContent"></div>
 		</modal>
+		<PLoader />
 	</div>
 </template>
 

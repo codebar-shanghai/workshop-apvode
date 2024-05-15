@@ -1,18 +1,16 @@
-import { Node } from "./Node";
+import { InputNode } from "./Node";
 import {
-	P5Drawable,
+	ILogicOutput,
 } from "./Interfaces";
 import {
-	colorMouseOver,
 	fillValue,
 } from "./Utils";
-import { currMouseAction } from "./MouseAction";
-import { MouseAction } from "./Enums";
 import { Simulator } from ".";
+import { Text   } from "konva/lib/shapes/Text";
+import { Circle } from "konva/lib/shapes/Circle";
+import { Line   } from "konva/lib/shapes/Line";
 
-export class LogicOutput
-implements
-	P5Drawable {
+export class LogicOutput {
 	value: boolean;
 	posX: number;
 	posY: number;
@@ -21,22 +19,71 @@ implements
 	isMoving: boolean;
 	offsetMouseX: number;
 	offsetMouseY: number;
-	input: Node | undefined;
+	input: InputNode | undefined;
 	nodeStartID: number;
-	simulator: Simulator;
 
-	constructor(simulator: Simulator) {
-		this.simulator = simulator;
-		this.value = false;
-		this.posX = this.simulator._instance.mouseX;
-		this.posY = this.simulator._instance.mouseY;
-		this.diameter = 25;
-		this.isSpawned = false;
-		this.isMoving = false;
-		this.offsetMouseX = 0;
-		this.offsetMouseY = 0;
-		this.input = new Node(this.simulator, this.posX - 30, this.posY, false, this.value);
-		this.nodeStartID = this.input.id;
+	// Konva elements
+	line: Line;
+	circle: Circle;
+	txt_value: Text;
+	txt_label: Text;
+
+	constructor(simulator: Simulator, obj: Partial<ILogicOutput> = {}) {
+		this.value = obj.value == true;
+
+		this.posX = typeof obj.posX == "number" ? obj.posX : 0;
+		this.posY = typeof obj.posY == "number" ? obj.posY : 0;
+
+		this.diameter = typeof obj.diameter == "number" ? obj.diameter : 25;
+		this.isSpawned = typeof obj.isSpawned == "boolean" ? obj.isSpawned : false;
+		this.isMoving = obj.isMoving || false;
+
+		this.offsetMouseX = typeof obj.offsetMouseX == "number" ? obj.offsetMouseX : 0;
+		this.offsetMouseY = typeof obj.offsetMouseY == "number" ? obj.offsetMouseY : 0;
+
+		this.input = new InputNode(simulator, this.posX - 30, this.posY, this.value, (v: boolean) => {
+			this._update(v);
+		});
+		this.nodeStartID = typeof obj.nodeStartID == "number" ? obj.nodeStartID : this.input.id;
+
+		const layer = simulator._layer;
+		this.circle = new Circle({
+			x: this.posX,
+			y: this.posY,
+			radius: this.diameter / 2,
+			fill: fillValue(this.value),
+			stroke: "black",
+			strokeWidth: 4,
+		});
+		layer.add(this.circle);
+
+		this.line = new Line({
+			points: this._generateLinePoints(),
+			strokeWidth: 4,
+			stroke: "black",
+		});
+		layer.add(this.line);
+
+		// text
+		const txt_label_pos = this.TextLabelPos;
+		this.txt_label = new Text({
+			x: txt_label_pos.x,
+			y: txt_label_pos.y,
+			text: "OUTPUT",
+			fontSize: 12,
+		});
+		layer.add(this.txt_label);
+
+		const txt_value_pos = this.TextValuePos;
+		this.txt_value = new Text({
+			x: txt_value_pos.x,
+			y: txt_value_pos.y,
+			text: this.value ? "1" : "0",
+			fontSize: 18,
+			fontStyle: this.value ? "bold" : "normal",
+			fill: this.value ? "black" : "white",
+		});
+		layer.add(this.txt_value);
 	}
 
 	destroy() {
@@ -44,55 +91,21 @@ implements
 		this.input = undefined;
 	}
 
-	draw() {
-		const p = this.simulator._instance;
+	private _update(v: boolean) {
+		this.value = v;
 
-		if (!this.isSpawned) {
-			this.posX = p.mouseX;
-			this.posY = p.mouseY;
-		}
+		this.circle.fill(fillValue(this.value));
+		this.line.stroke(this.value ? fillValue(this.value) : "black");
 
-		if (this.isMoving) {
-			this.posX = p.mouseX + this.offsetMouseX;
-			this.posY = p.mouseY + this.offsetMouseY;
-		}
-
-		this.input?.updatePosition(this.posX - 30, this.posY);
-
-		this.value = this.input?.getValue() || false;
-
-		fillValue(p, this.value);
-
-		if (this.isMouseOver()) {
-			p.stroke(colorMouseOver[0], colorMouseOver[1], colorMouseOver[2]);
-		} else {
-			p.stroke(0);
-		}
-
-		p.strokeWeight(4);
-		p.line(this.posX, this.posY, this.posX - 30, this.posY);
-		p.circle(this.posX, this.posY, this.diameter);
-
-		this.input?.draw();
-
-		p.noStroke();
-		p.fill(0);
-		p.textSize(12);
-		p.textStyle(p.NORMAL);
-		p.text('OUTPUT', this.posX - 20, this.posY + 25);
-
-		p.textSize(18);
-
-		const textPosX = this.posX - this.diameter / 4,
-			textPosY = this.posY + this.diameter / 4
-
+		// update text
 		if (this.value) {
-			p.textStyle(p.BOLD);
-			p.text('1', textPosX, textPosY);
+			this.txt_value.text("1");
+			this.txt_value.fontStyle("bold");
+			this.txt_value.fill("black");
 		} else {
-			p.textStyle(p.NORMAL);
-			p.fill(255);
-			p.text('0', textPosX, textPosY);
+			this.txt_value.text("0");
+			this.txt_value.fontStyle("normal");
+			this.txt_value.fill("white");
 		}
 	}
 
@@ -102,37 +115,22 @@ implements
 		}
 	}
 
-	isMouseOver() {
-		const p = this.simulator._instance;
-		return p.dist(p.mouseX, p.mouseY, this.posX, this.posY) < this.diameter / 2;
+	get TextValuePos() {
+		return {
+			x: this.posX - this.diameter / 4,
+			y: this.posY - this.diameter / 4,
+		};
 	}
 
-	mousePressed() {
-		const p = this.simulator._instance;
-		if (!this.isSpawned) {
-			this.posX = p.mouseX;
-			this.posY = p.mouseY;
-			this.isSpawned = true;
-			return;
-		}
-
-		if (this.isMouseOver() || currMouseAction.State == MouseAction.MOVE) {
-			this.isMoving = true;
-			this.offsetMouseX = this.posX - p.mouseX;
-			this.offsetMouseY = this.posY - p.mouseY;
-		}
+	get TextLabelPos() {
+		return {
+			x: this.posX - 20,
+			y: this.posY + this.diameter,
+		};
 	}
 
-	mouseReleased() {
-		this.isMoving = false;
-	}
-
-	mouseClicked() {
-		if (this.isMouseOver() || this.input?.isMouseOver()) {
-			this.input?.mouseClicked();
-			return true;
-		}
-		return false;
+	private _generateLinePoints() {
+		return [this.posX - this.diameter / 2, this.posY, this.posX - 30 + (this.input?.diameter || 0) / 2, this.posY];
 	}
 }
 

@@ -29,12 +29,12 @@ dependencies:
   highlight.js:
     specifier: ^11.9.0
     version: 11.9.0
+  konva:
+    specifier: ^9.3.6
+    version: 9.3.6
   moment:
     specifier: ^2.30.1
     version: 2.30.1
-  p5:
-    specifier: ^1.9.2
-    version: 1.9.2
   reveal.js:
     specifier: ^5.0.4
     version: 5.0.4
@@ -43,9 +43,6 @@ dependencies:
     version: 3.4.18(typescript@5.3.3)
 
 devDependencies:
-  '@types/p5':
-    specifier: ^1.7.6
-    version: 1.7.6
   '@types/reveal.js':
     specifier: ^4.4.8
     version: 4.4.8
@@ -554,10 +551,6 @@ packages:
 
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
-    dev: true
-
-  /@types/p5@1.7.6:
-    resolution: {integrity: sha512-6pLTOo0V3N5jZb5nTwjiv3lPHLK3Z/TjbhQUj8CTWXocUk1Z/f6OHTp3Pcwi1BhWnf5gqKUcyEb1gP0KIJuQgw==}
     dev: true
 
   /@types/reveal.js@4.4.8:
@@ -1131,6 +1124,10 @@ packages:
     hasBin: true
     dev: true
 
+  /konva@9.3.6:
+    resolution: {integrity: sha512-dqR8EbcM0hjuilZCBP6xauQ5V3kH3m9kBcsDkqPypQuRgsXbcXUrxqYxhNbdvKZpYNW8Amq94jAD/C0NY3qfBQ==}
+    dev: false
+
   /less@4.2.0:
     resolution: {integrity: sha512-P3b3HJDBtSzsXUl0im2L7gTO5Ubg8mEN6G8qoTS77iXxXX4Hvu4Qj540PZDvQ8V6DmX6iXo98k7Md0Cm1PrLaA==}
     engines: {node: '>=6'}
@@ -1288,10 +1285,6 @@ packages:
       is-docker: 2.2.1
       is-wsl: 2.2.0
     dev: true
-
-  /p5@1.9.2:
-    resolution: {integrity: sha512-fV8Td9Q1qlYXRXPLNrclRsgzXxPp/EuDlJUteV1XEtsy0JwjjCVteCrv7TTCU71BSoEtmuQ/51BIVRUJi/0gEw==}
-    dev: false
 
   /parse-node-version@1.0.1:
     resolution: {integrity: sha512-3YHlOa/JgH6Mnpr05jP9eDG254US9ek25LyIxZlDItp2iJtwyaXQb57lBYLdT3MowkUFYEV2XXNAYIPlESvJlA==}

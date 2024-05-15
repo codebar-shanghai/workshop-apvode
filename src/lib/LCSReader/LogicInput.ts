@@ -1,22 +1,16 @@
-import { Node } from "./Node";
+import { OutputNode } from "./Node";
 import {
-	P5Drawable,
-	P5MouseOver,
-	P5MouseClickable,
+	ILogicInput,
 } from "./Interfaces";
-import { MouseAction } from "./Enums";
-import { currMouseAction } from "./MouseAction";
 import {
 	fillValue,
-	colorMouseOver,
 } from "./Utils";
 import { Simulator } from ".";
+import { Text   } from "konva/lib/shapes/Text";
+import { Circle } from "konva/lib/shapes/Circle";
+import { Line   } from "konva/lib/shapes/Line";
 
-export class LogicInput
-implements
-	P5MouseOver,
-	P5Drawable,
-	P5MouseClickable {
+export class LogicInput {
 	value: boolean;
 	posX: number;
 	posY: number;
@@ -25,77 +19,81 @@ implements
 	isMoving: boolean;
 	offsetMouseX: number;
 	offsetMouseY: number;
-	output: Node | undefined;
+	output: OutputNode | undefined;
 	nodeStartID: number;
-	simulator: Simulator;
 
-	constructor(simulator: Simulator) {
-		this.simulator = simulator;
-		this.value = false;
-		this.posX = this.simulator._instance.mouseX;
-		this.posY = this.simulator._instance.mouseY;
-		this.diameter = 25;
-		this.isSpawned = false;
-		this.isMoving = false;
-		this.offsetMouseX = 0;
-		this.offsetMouseY = 0;
-		this.output = new Node(this.simulator, this.posX + 30, this.posY, true, this.value);
-		this.nodeStartID = this.output.id;
-	}
+	// Konva elements
+	circle: Circle;
+	line: Line;
+	txt_value: Text;
+	txt_label: Text;
 
-	// TODO
-	static from(json: any): LogicInput {
-		return Object.assign(this, json);
+	constructor(simulator: Simulator, obj: Partial<ILogicInput> = {}) {
+
+		this.value = obj.value == 1 || false;
+
+		this.posX = typeof obj.posX == "number" ? obj.posX : 0;
+		this.posY = typeof obj.posY == "number" ? obj.posY : 0;
+
+		this.diameter = typeof obj.diameter == "number" ? obj.diameter : 25;
+		this.isSpawned = typeof obj.isSpawned == "boolean" ? obj.isSpawned : false;
+		this.isMoving = obj.isMoving || false;
+
+		this.offsetMouseX = typeof obj.offsetMouseX == "number" ? obj.offsetMouseX : 0;
+		this.offsetMouseY = typeof obj.offsetMouseY == "number" ? obj.offsetMouseY : 0;
+
+		this.output = new OutputNode(simulator, this.posX + 30, this.posY, this.value);
+		this.nodeStartID = typeof obj.nodeStartID == "number" ? obj.nodeStartID : this.output.id;
+
+		const layer = simulator._layer;
+		this.circle = new Circle({
+			x: this.posX,
+			y: this.posY,
+			radius: this.diameter / 2,
+			fill: fillValue(this.value),
+			stroke: "black",
+			strokeWidth: 4,
+		});
+		this.circle.on("click", () => {
+			this.toggle();
+		});
+		layer.add(this.circle);
+
+		this.line = new Line({
+			points: this._generateLinePoints(),
+			strokeWidth: 4,
+			stroke: "black",
+		});
+		layer.add(this.line);
+
+		// text
+		const txt_label_pos = this.TextLabelPos;
+		this.txt_label = new Text({
+			x: txt_label_pos.x,
+			y: txt_label_pos.y,
+			text: "INPUT",
+			fontSize: 12,
+		});
+		layer.add(this.txt_label);
+
+		const txt_value_pos = this.TextValuePos;
+		this.txt_value = new Text({
+			x: txt_value_pos.x,
+			y: txt_value_pos.y,
+			text: this.value ? "1" : "0",
+			fontSize: 18,
+			fontStyle: this.value ? "bold" : "normal",
+			fill: this.value ? "black" : "white",
+		});
+		this.txt_value.on("click", () => {
+			this.toggle();
+		});
+		layer.add(this.txt_value);
 	}
 
 	destroy() {
 		this.output?.destroy();
 		this.output = undefined;
-	}
-
-	draw() {
-		const p = this.simulator._instance;
-		if (!this.isSpawned) {
-			this.posX = p.mouseX;
-			this.posY = p.mouseY;
-		}
-
-		fillValue(p, this.value);
-
-		if (this.isMoving) {
-			this.posX = p.mouseX + this.offsetMouseX;
-			this.posY = p.mouseY + this.offsetMouseY;
-		}
-
-		if (this.isMouseOver()) {
-			p.stroke(colorMouseOver[0], colorMouseOver[1], colorMouseOver[2]);
-		} else {
-			p.stroke(0);
-		}
-
-		p.strokeWeight(4);
-		p.line(this.posX, this.posY, this.posX + 30, this.posY);
-		p.circle(this.posX, this.posY, this.diameter);
-
-		this.output?.updatePosition(this.posX + 30, this.posY);
-		this.output?.setValue(this.value);
-		this.output?.draw();
-
-		this.printInfo();
-
-		p.textSize(18);
-
-		const textPosX = this.posX - this.diameter / 4,
-			textPosY = this.posY + this.diameter / 4
-
-		if (this.value) {
-			p.textStyle(p.BOLD);
-			p.text('1', textPosX, textPosY);
-		} else {
-			p.textStyle(p.NORMAL);
-			p.fill(255);
-			p.text('0', textPosX, textPosY);
-		}
 	}
 
 	refreshNodes() {
@@ -104,59 +102,42 @@ implements
 		}
 	}
 
-	printInfo() {
-		const p = this.simulator._instance;
-		p.noStroke();
-		p.fill(0);
-		p.textSize(12);
-		p.textStyle(p.NORMAL);
-		p.text("INPUT", this.posX - 20, this.posY + 25);
+	get TextValuePos() {
+		return {
+			x: this.posX - this.diameter / 4,
+			y: this.posY - this.diameter / 4,
+		};
 	}
 
-	isMouseOver() {
-		const p = this.simulator._instance;
-		return p.dist(p.mouseX, p.mouseY, this.posX, this.posY) < this.diameter / 2;
+	get TextLabelPos() {
+		return {
+			x: this.posX - 20,
+			y: this.posY + this.diameter,
+		};
 	}
 
-	mousePressed() {
-		const p = this.simulator._instance;
-		if (!this.isSpawned) {
-			this.posX = p.mouseX;
-			this.posY = p.mouseY;
-			this.isSpawned = true;
-			// backToEdit
-			currMouseAction.State = MouseAction.EDIT;
-			return;
-		}
-
-		if (this.isMouseOver() || currMouseAction.State == MouseAction.MOVE) {
-			this.isMoving = true;
-			this.offsetMouseX = this.posX - p.mouseX;
-			this.offsetMouseY = this.posY - p.mouseY;
-		}
-	}
-
-	mouseReleased() {
-		this.isMoving = false;
-	}
-
-	doubleClicked() {
-		if (this.isMouseOver()) {
-			this.toggle();
-		}
-	}
-
-	mouseClicked() {
-		if (this.isMouseOver() || this.output?.isMouseOver()) {
-			this.toggle();
-			this.output?.mouseClicked();
-			return true;
-		}
-		return false;
+	private _generateLinePoints() {
+		return [this.posX + this.diameter / 2, this.posY, this.posX + 30 - (this.output?.diameter || 0) / 2, this.posY];
 	}
 
 	toggle() {
 		this.value = !this.value;
+		this.circle.fill(fillValue(this.value));
+		this.line.stroke(this.value ? fillValue(this.value) : "black");
+		// update output
+		if (this.output) {
+			this.output.Value = this.value;
+		}
+		// update text
+		if (this.value) {
+			this.txt_value.text("1");
+			this.txt_value.fontStyle("bold");
+			this.txt_value.fill("black");
+		} else {
+			this.txt_value.text("0");
+			this.txt_value.fontStyle("normal");
+			this.txt_value.fill("white");
+		}
 	}
 }
 
