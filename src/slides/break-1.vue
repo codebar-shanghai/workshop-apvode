@@ -10,16 +10,3 @@
 	</section>
 </template>
 
-<script setup lang="ts">
-import {
-	onMounted,
-} from "vue";
-import {
-	component_loaded,
-} from "../lib/ResourceManager.ts";
-
-onMounted(() => {
-	component_loaded();
-});
-</script>
-

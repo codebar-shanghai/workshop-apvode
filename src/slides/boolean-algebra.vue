@@ -11,16 +11,6 @@ import XORGATE from "../assets/circuits/XOR.json";
 import TruthTable from "./gates/truth-table.vue";
 
 import ProblemStack2 from "../components/problem-stack-2.vue";
-import {
-	onMounted,
-} from "vue";
-import {
-	component_loaded,
-} from "../lib/ResourceManager.ts";
-
-onMounted(() => {
-	component_loaded();
-});
 </script>
 
 <template>

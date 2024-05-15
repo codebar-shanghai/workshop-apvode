@@ -143,16 +143,6 @@ import OUTPUT_ADDR_VAR_STACK from "../assets/code/output_addr_var_stack.txt?raw"
 import OUTPUT_ARRAY          from "../assets/code/output_array.txt?raw";
 import OUTPUT_ARRAY_UNINIT   from "../assets/code/output_array_uninit.txt?raw";
 import OUTPUT_POINTER        from "../assets/code/output_pointer.txt?raw";
-import {
-	onMounted,
-} from "vue";
-import {
-	component_loaded,
-} from "../lib/ResourceManager.ts";
-
-onMounted(() => {
-	component_loaded();
-});
 </script>
 
 <style scoped>

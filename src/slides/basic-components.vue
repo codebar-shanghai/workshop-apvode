@@ -19,15 +19,5 @@ import FullAdder from "./basic-components/full-adder.vue";
 import Mux from "./basic-components/mux.vue";
 import Register from "./basic-components/register.vue";
 import Advanced from "./basic-components/advanced.vue";
-import {
-	onMounted,
-} from "vue";
-import {
-	component_loaded,
-} from "../lib/ResourceManager.ts";
-
-onMounted(() => {
-	component_loaded();
-});
 </script>
 

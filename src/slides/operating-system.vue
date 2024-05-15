@@ -121,16 +121,6 @@
 
 <script setup lang="ts">
 import ProblemStack4 from "../components/problem-stack-4.vue";
-import {
-	onMounted,
-} from "vue";
-import {
-	component_loaded,
-} from "../lib/ResourceManager.ts";
-
-onMounted(() => {
-	component_loaded();
-});
 </script>
 
 <style scoped>

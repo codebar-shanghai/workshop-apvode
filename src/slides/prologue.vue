@@ -41,15 +41,5 @@
 <script setup lang="ts">
 import ProblemStack1 from "../components/problem-stack-1.vue";
 import SignalAnalogDigital from "./signal-analog-digital.vue";
-import {
-	onMounted,
-} from "vue";
-import {
-	component_loaded,
-} from "../lib/ResourceManager.ts";
-
-onMounted(() => {
-	component_loaded();
-});
 </script>
 

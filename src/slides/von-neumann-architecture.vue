@@ -136,13 +136,9 @@
 <script setup lang="ts">
 import {
 	inject,
-	onMounted,
 	Ref,
 	ref,
 } from "vue";
-import {
-	component_loaded,
-} from "../lib/ResourceManager.ts";
 
 const CODE_1 = `int x, y;
 y = x - 37;`;
@@ -160,10 +156,6 @@ const vNCImg: Ref<HTMLImageElement | null> = ref(null);
 function open_modal() {
 	x!.open_common_modal(vNCImg.value!.outerHTML);
 }
-
-onMounted(() => {
-	component_loaded();
-});
 </script>
 
 <style scoped>
