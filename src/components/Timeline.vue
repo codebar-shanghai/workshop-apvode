@@ -5,7 +5,6 @@ import {
 	ref,
 	onMounted,
 } from "vue";
-import moment from "moment";
 
 const timeline = ref<HTMLDivElement | null>(null);
 
@@ -143,8 +142,25 @@ const RAW_EVENTS: { name: string; day: string; group: GROUP; text?: string }[] =
 	{ day: "2022-04-20", group: GRP_HW, name: "AMD Ryzen 5800X3D" },
 ];
 
+function parseDateString(dateString: string): Date {
+	const yearOnly = /^\d{4}$/,
+		yearMonth = /^\d{4}-\d{2}$/,
+		yearMonthDay = /^\d{4}-\d{2}-\d{2}$/;
+
+	if (yearOnly.test(dateString)) {
+		return new Date(Date.UTC(+dateString, 0, 1));
+	} else if (yearMonth.test(dateString)) {
+		const [year, month] = dateString.split("-").map(Number);
+		return new Date(Date.UTC(year, month - 1, 1));
+	} else if (yearMonthDay.test(dateString)) {
+		return new Date(dateString + "T00:00:00Z");
+	} else {
+		return new Date(dateString);
+	}
+}
+
 const events: ITimelineSlideData[] = RAW_EVENTS.map(x => {
-	const date = moment(x.day).toDate();
+	const date = parseDateString(x.day);
 	return {
 		start_date: { year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDay() },
 		text: { headline: x.name, },
