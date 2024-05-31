@@ -32,7 +32,7 @@
 				<li>Reveal.js</li>
 				<li>timelinejs</li>
 				<li>highlight.js</li>
-				<li>echars</li>
+				<li><span class="strikethrough">p5.js</span> <span class="strikethrough">echarts</span> konva.js</li>
 				<li>Font Awesome + devicons</li>
 				<li>diagrams.net (previously draw.io)</li>
 			</ul>
@@ -43,7 +43,7 @@
 	</section>
 </template>
 
-<style>
+<style scoped>
 .fragment.hidden {
 	display: none;
 }
@@ -53,6 +53,25 @@
 
 .fragment.show.visible {
 	display: none;
+}
+
+.strikethrough {
+	position: relative;
+}
+.strikethrough:before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 50%;
+	right: 0;
+	border-top: 3px solid;
+	border-color: #db6f67;
+
+	-webkit-transform:rotate(-5deg);
+	-moz-transform:rotate(-5deg);
+	-ms-transform:rotate(-5deg);
+	-o-transform:rotate(-5deg);
+	transform:rotate(-5deg);
 }
 </style>
 
