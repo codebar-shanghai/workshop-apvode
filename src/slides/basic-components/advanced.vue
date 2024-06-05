@@ -251,6 +251,16 @@
 			</a>
 		</div>
 	</section>
+	<section>
+		<h3>Hardware Design in Real World</h3>
+		<div class="flex justify-between">
+			<highlightjs language="verilog" :autodetect="false" :code="CODE_HA_VHDL" />
+		</div>
+		<ul class="text-3xl">
+			<li>Use high-level languages like Verilog or VHDL to describe the behavior of the circuit.</li>
+			<li>Use synthesis tools to generate a detailed, optimized map of the logic gates and their interconnections. (performance, area, power consumption, ...)</li>
+		</ul>
+	</section>
 </template>
 
 <style scoped>
@@ -265,6 +275,7 @@
 
 <script setup lang="ts">
 import CODE_COUNTER from "../../assets/code/counter.js?raw";
+import CODE_HA_VHDL from "../../assets/code/half_adder.v?raw";
 
 import LCJsonOutput0 from "../../assets/circuits/counter-o0.json";
 import LCJsonOutput1 from "../../assets/circuits/counter-o1.json";
