@@ -65,6 +65,7 @@ type RevealEvent = Event & {
 const timelineModal: Ref<ModalMethods | null> = ref(null);
 const gateModal:     Ref<ModalMethods | null> = ref(null);
 const commonModal:   Ref<ModalMethods | null> = ref(null);
+const helperModal:   Ref<ModalMethods | null> = ref(null);
 
 onMounted(() => {
 	const deck = new Reveal({
@@ -102,6 +103,10 @@ function open_gates() {
 	gateModal.value!.show();
 }
 
+function open_helper() {
+	helperModal.value!.show();
+}
+
 const commonModalContent = ref("");
 function open_common_modal(vHTML: string) {
 	commonModalContent.value = vHTML;
@@ -113,6 +118,9 @@ provide("open_common_modal", { open_common_modal });
 <template>
 	<div :class="theme_name">
 		<div class="bfocm-toolbar">
+			<div class="btn" @click="open_helper">
+				<fa icon="fa-regular fa-circle-question" />
+			</div>
 			<div class="btn" @click="toggle_theme">
 				<fa icon="fa-regular fa-lightbulb" />
 			</div>
@@ -153,6 +161,19 @@ provide("open_common_modal", { open_common_modal });
 		<Modal ref="commonModal">
 			<div v-html="commonModalContent"></div>
 		</modal>
+		<Modal ref="helperModal">
+			<div class="text-3xl bg-white w-1/2 p-12">
+				<h3>Shorcuts</h3>
+				<ul class="pl-6 list-disc">
+					<li><kbd>ESC</kbd> or <kbd>o</kbd>: toggle the overview mode on and off.</li>
+					<li><kbd>f</kbd>: view presentation in fullscreen mode. Once in fullscreen mode, press the <kbd>ESC</kbd> key to exit.</li>
+					<li><kbd>←</kbd><kbd>↓</kbd><kbd>↑</kbd><kbd>→</kbd>: navigate with arrow keys.</li>
+					<li><kbd>h</kbd><kbd>j</kbd><kbd>k</kbd><kbd>l</kbd>: navigate with hjkl. (vim style)</li>
+					<li><kbd>g</kbd>: jump to slide, type <code class="text-sky-500 underline underline-offset-8">6/2</code> will navigate to horizontal slide 6, vertical slide 2.</li>
+				</ul>
+				<p class="text-xl">Go down to the end of each section first, then go right.</p>
+			</div>
+		</Modal>
 	</div>
 </template>
 
@@ -192,5 +213,14 @@ provide("open_common_modal", { open_common_modal });
 	color: #333;
 }
 
+kbd {
+	border-radius: 2px;
+	padding: 0 5px;
+	border-color: #e6e6e6 #bebebe #bebebe #e6e6e6;
+	border-style: solid;
+	border-width: 1px 3px 4px;
+	background-color: #d2d2d2;
+	background-color: rgba(210, 210, 210, 0.9);
+}
 </style>
 
