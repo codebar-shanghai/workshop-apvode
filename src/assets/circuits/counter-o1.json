@@ -1,0 +1,388 @@
+{
+	"logicInput": [
+		{
+			"value": 0,
+			"posX": 29,
+			"posY": 60,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": -10,
+			"offsetMouseY": 2,
+			"nodeStartID": 0,
+			"isSaved": true
+		},
+		{
+			"value": 0,
+			"posX": 28,
+			"posY": 156,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": -3,
+			"offsetMouseY": 0,
+			"nodeStartID": 1,
+			"isSaved": true
+		},
+		{
+			"value": 0,
+			"posX": 28,
+			"posY": 246,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": -4,
+			"offsetMouseY": -5,
+			"nodeStartID": 2,
+			"isSaved": true
+		},
+		{
+			"value": 0,
+			"posX": 28,
+			"posY": 334,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": -1,
+			"offsetMouseY": 4,
+			"nodeStartID": 3,
+			"isSaved": true
+		}
+	],
+	"logicOutput": [
+		{
+			"value": 0,
+			"posX": 621,
+			"posY": 229,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 6,
+			"offsetMouseY": -3,
+			"nodeStartID": 43,
+			"isSaved": true
+		}
+	],
+	"flipflop": [],
+	"logicClock": [],
+	"gate": [
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 140,
+			"posY": 5,
+			"isSpawned": true,
+			"offsetMouseX": -56,
+			"offsetMouseY": -38,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 4
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 140,
+			"posY": 73,
+			"isSpawned": true,
+			"offsetMouseX": -55,
+			"offsetMouseY": -38,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 7
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 139,
+			"posY": 141,
+			"isSpawned": true,
+			"offsetMouseX": -52,
+			"offsetMouseY": -22,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 10
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 138,
+			"posY": 212,
+			"isSpawned": true,
+			"offsetMouseX": -55,
+			"offsetMouseY": -20,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 13
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 138,
+			"posY": 279,
+			"isSpawned": true,
+			"offsetMouseX": -54,
+			"offsetMouseY": -21,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 16
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 138,
+			"posY": 342,
+			"isSpawned": true,
+			"offsetMouseX": -48,
+			"offsetMouseY": -19,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 19
+		},
+		{
+			"strType": "XOR",
+			"type": 6,
+			"width": 100,
+			"height": 50,
+			"posX": 247,
+			"posY": 37,
+			"isSpawned": true,
+			"offsetMouseX": -52,
+			"offsetMouseY": -42,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 22
+		},
+		{
+			"strType": "XOR",
+			"type": 6,
+			"width": 100,
+			"height": 50,
+			"posX": 248,
+			"posY": 177,
+			"isSpawned": true,
+			"offsetMouseX": -35,
+			"offsetMouseY": -26,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 31
+		},
+		{
+			"strType": "XOR",
+			"type": 6,
+			"width": 100,
+			"height": 50,
+			"posX": 244,
+			"posY": 309,
+			"isSpawned": true,
+			"offsetMouseX": -45,
+			"offsetMouseY": -20,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 34
+		},
+		{
+			"strType": "XOR",
+			"type": 6,
+			"width": 100,
+			"height": 50,
+			"posX": 355,
+			"posY": 114,
+			"isSpawned": true,
+			"offsetMouseX": -40,
+			"offsetMouseY": -27,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 37
+		},
+		{
+			"strType": "XOR",
+			"type": 6,
+			"width": 100,
+			"height": 50,
+			"posX": 455,
+			"posY": 204,
+			"isSpawned": true,
+			"offsetMouseX": -44,
+			"offsetMouseY": -28,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 40
+		}
+	],
+	"srLatch": [],
+	"wire": [
+		{
+			"startID": 0,
+			"endID": 4,
+			"endX": 73,
+			"endY": 65,
+			"width": 8
+		},
+		{
+			"startID": 0,
+			"endID": 7,
+			"endX": 75,
+			"endY": 65,
+			"width": 8
+		},
+		{
+			"startID": 0,
+			"endID": 10,
+			"endX": 73,
+			"endY": 69,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 5,
+			"endX": 79,
+			"endY": 129,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 8,
+			"endX": 76,
+			"endY": 187,
+			"width": 8
+		},
+		{
+			"startID": 3,
+			"endID": 11,
+			"endX": 80,
+			"endY": 244,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 13,
+			"endX": 76,
+			"endY": 125,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 16,
+			"endX": 76,
+			"endY": 126,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 14,
+			"endX": 75,
+			"endY": 190,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 19,
+			"endX": 71,
+			"endY": 192,
+			"width": 8
+		},
+		{
+			"startID": 3,
+			"endID": 20,
+			"endX": 72,
+			"endY": 247,
+			"width": 8
+		},
+		{
+			"startID": 6,
+			"endID": 22,
+			"endX": 258,
+			"endY": 36,
+			"width": 8
+		},
+		{
+			"startID": 9,
+			"endID": 23,
+			"endX": 259,
+			"endY": 82,
+			"width": 8
+		},
+		{
+			"startID": 12,
+			"endID": 31,
+			"endX": 256,
+			"endY": 126,
+			"width": 8
+		},
+		{
+			"startID": 15,
+			"endID": 32,
+			"endX": 263,
+			"endY": 202,
+			"width": 8
+		},
+		{
+			"startID": 18,
+			"endID": 34,
+			"endX": 258,
+			"endY": 249,
+			"width": 8
+		},
+		{
+			"startID": 21,
+			"endID": 35,
+			"endX": 252,
+			"endY": 301,
+			"width": 8
+		},
+		{
+			"startID": 24,
+			"endID": 37,
+			"endX": 394,
+			"endY": 65,
+			"width": 8
+		},
+		{
+			"startID": 33,
+			"endID": 38,
+			"endX": 385,
+			"endY": 167,
+			"width": 8
+		},
+		{
+			"startID": 36,
+			"endID": 41,
+			"endX": 390,
+			"endY": 268,
+			"width": 8
+		},
+		{
+			"startID": 39,
+			"endID": 40,
+			"endX": 503,
+			"endY": 110,
+			"width": 8
+		},
+		{
+			"startID": 42,
+			"endID": 43,
+			"endX": 605,
+			"endY": 205,
+			"width": 8
+		},
+		{
+			"startID": 3,
+			"endID": 17,
+			"endX": 74,
+			"endY": 250,
+			"width": 8
+		}
+	]
+}
