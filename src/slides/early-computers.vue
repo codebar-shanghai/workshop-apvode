@@ -101,6 +101,62 @@
 				<li class="fragment">Commercially successful ISAs last for decades</li>
 			</ul>
 		</section>
+		<section>
+			<h3>What's the point of mentioning these dinosaurs?</h3>
+		</section>
+		<section>
+			<h3>History Repeats Itself</h3>
+			<table class="text-2xl text-center">
+				<tr class="font-bold">
+					<td></td>
+					<td>IBM 650<br />(Main Frame)</td>
+					<td>PDP-1<br />(Minicomputer)</td>
+					<td>IBM PC</td>
+					<td>iPhone<br />(1st Gen)</td>
+					<td>RPi Pico</td>
+				</tr>
+				<tr>
+					<td class="font-bold">Released</td>
+					<td>1954</td>
+					<td>1959</td>
+					<td>1981</td>
+					<td>2007</td>
+					<td>2021</td>
+				</tr>
+				<tr>
+					<td class="font-bold">Price</td>
+					<td>150k USD<br />(~1.5m 2023)</td>
+					<td>120k USD<br />(~1.2m 2023)</td>
+					<td>1.5k USD<br />(~5.2k 2023)</td>
+					<td>499 USD<br />(~755 2024)</td>
+					<td>4 USD</td>
+				</tr>
+				<tr>
+					<td class="font-bold">Mass</td>
+					<td>969 kg<br />(ChatGPT)</td>
+					<td>730 kg</td>
+					<td>~10 kg</td>
+					<td>135 g</td>
+					<td>~10 g</td>
+				</tr>
+				<tr>
+					<td class="font-bold">CPU</td>
+					<td>~100Hz<br />(ChatGPT)</td>
+					<td>187 kHz</td>
+					<td>4.7 MHz</td>
+					<td>620 MHz</td>
+					<td>133 MHz</td>
+				</tr>
+				<tr>
+					<td class="font-bold">RAM</td>
+					<td>~10KB<br />(ChatGPT)</td>
+					<td>9.2 KB</td>
+					<td>16 KB ~ 256 KB</td>
+					<td>128 MB</td>
+					<td>264 KB</td>
+				</tr>
+			</table>
+		</section>
 	</section>
 </template>
 
