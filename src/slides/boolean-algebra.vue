@@ -17,11 +17,11 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 	<section>
 		<section>
 			<h3>Boolean Algebra</h3>
-			<ul>
-				<li>AND: <code>1 AND 0 = 0</code></li>
-				<li>OR: <code>1 OR 0 = 1</code></li>
-				<li>...</li>
-			</ul>
+			<table class="text-center">
+				<tr><td>AND</td><td><code>1 AND 0 = 0</code></td></tr>
+				<tr><td>OR</td><td><code>1 OR 0 = 1</code></td></tr>
+				<tr><td colspan="2">...</td></tr>
+			</table>
 		</section>
 		<NandGate />
 		<Gate
