@@ -17,14 +17,14 @@
 		<section>
 			<h3>When You Try to Learn Programming</h3>
 			<ul>
-				<li>Weird syntaxes and code structures</li>
-				<li>Strange concepts like stack / heap / threads</li>
-				<li>What could be done with a programming language</li>
-				<li>How to improve programming skills</li>
-				<li>How to learn other languages fast</li>
-				<li>And why some languages look the same</li>
-				<li>What happens underneath</li>
-				<li>Should I learn Linux and command line tools</li>
+				<li class="fragment">Weird syntaxes and code structures</li>
+				<li class="fragment">Strange concepts like stack / heap / threads</li>
+				<li class="fragment">What could be done with a programming language</li>
+				<li class="fragment">How to improve programming skills</li>
+				<li class="fragment">How to learn other languages fast</li>
+				<li class="fragment">And why some languages look the same</li>
+				<li class="fragment">What happens underneath</li>
+				<li class="fragment">Should I learn Linux and command line tools</li>
 			</ul>
 		</section>
 		<section>
