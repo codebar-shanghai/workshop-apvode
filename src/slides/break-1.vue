@@ -14,7 +14,7 @@
 	</section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import problemStack4 from '../components/problem-stack-4.vue';
 </script>
 
