@@ -113,7 +113,7 @@
 					<td>PDP-1<br />(Minicomputer)</td>
 					<td>IBM PC</td>
 					<td>iPhone<br />(1st Gen)</td>
-					<td>RPi Pico</td>
+					<td>RPi Pico<br />/ Pico 2</td>
 				</tr>
 				<tr>
 					<td class="font-bold">Released</td>
@@ -121,7 +121,7 @@
 					<td>1959</td>
 					<td>1981</td>
 					<td>2007</td>
-					<td>2021</td>
+					<td>2021/2024</td>
 				</tr>
 				<tr>
 					<td class="font-bold">Price</td>
@@ -129,7 +129,7 @@
 					<td>120k USD<br />(~1.2m 2023)</td>
 					<td>1.5k USD<br />(~5.2k 2023)</td>
 					<td>499 USD<br />(~755 2024)</td>
-					<td>4 USD</td>
+					<td>4 USD<br />/ 5 USD</td>
 				</tr>
 				<tr>
 					<td class="font-bold">Mass</td>
@@ -145,7 +145,7 @@
 					<td>187 kHz</td>
 					<td>4.7 MHz</td>
 					<td>620 MHz</td>
-					<td>133 MHz</td>
+					<td>133 MHz<br />/ 150MHz</td>
 				</tr>
 				<tr>
 					<td class="font-bold">RAM</td>
@@ -153,9 +153,20 @@
 					<td>9.2 KB</td>
 					<td>16 KB ~ 256 KB</td>
 					<td>128 MB</td>
-					<td>264 KB</td>
+					<td>264 KB<br />/ 520 KB</td>
 				</tr>
 			</table>
+		</section>
+		<section>
+			<div class="flex">
+				<img data-src="../assets/images/352547808-5038ae93-bd02-41cb-a2df-9c7afeaa57e3.jpg" width="50%"/>
+				<div class="text-2xl text-left ml-6 flex flex-col justify-center">
+					<img data-src="../assets/images/zero2-hero.webp" />
+					<p>Handheld Linux Terminal (Powered by RPi Zero 2W w/ TWO Nokia BL-5C battery)</p>
+					<p>Repo: https://github.com/ZitaoTech/Hackberry-Pi_Zero</p>
+					<p>Discussions on Hacker News: https://news.ycombinator.com/item?id=41138701</p>
+				</div>
+			</div>
 		</section>
 	</section>
 </template>
