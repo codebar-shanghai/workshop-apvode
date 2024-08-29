@@ -137,8 +137,8 @@ provide("open_common_modal", { open_common_modal });
 				<BooleanAlgebra />
 				<BasicComponents />
 				<VonNeumannArchitecture />
-				<Break1 />
 				<EarlyComputers />
+				<Break1 />
 				<OperatingSystem />
 				<CVsAssembly />
 				<FreeSoftwareMovement />
