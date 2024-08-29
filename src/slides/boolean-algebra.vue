@@ -17,11 +17,11 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 	<section>
 		<section>
 			<h3>Boolean Algebra</h3>
-			<ul>
-				<li>AND: <code>1 AND 0 = 0</code></li>
-				<li>OR: <code>1 OR 0 = 1</code></li>
-				<li>...</li>
-			</ul>
+			<table class="text-center">
+				<tr><td>AND</td><td><code>1 AND 0 = 0</code></td></tr>
+				<tr><td>OR</td><td><code>1 OR 0 = 1</code></td></tr>
+				<tr><td colspan="2">...</td></tr>
+			</table>
 		</section>
 		<NandGate />
 		<Gate
@@ -32,7 +32,7 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		>
 			<template #header>NOT</template>
 			<template #symbol>
-				<img class="bg-white scale-150" src="../lib/LCSReader/images/NOT.svg" />
+				<img class="bg-white scale-150" data-src="../lib/LCSReader/images/NOT.svg" />
 			</template>
 			<template #tftable>
 				<table class="text-lg text-center">
@@ -63,7 +63,7 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		>
 			<template #header>AND</template>
 			<template #symbol>
-				<img class="bg-white scale-150" src="../lib/LCSReader/images/AND.svg" />
+				<img class="bg-white scale-150" data-src="../lib/LCSReader/images/AND.svg" />
 			</template>
 			<template #tftable>
 				<TruthTable method="and" />
@@ -77,7 +77,7 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		>
 			<template #header>OR</template>
 			<template #symbol>
-				<img class="bg-white scale-150" src="../lib/LCSReader/images/OR.svg" />
+				<img class="bg-white scale-150" data-src="../lib/LCSReader/images/OR.svg" />
 			</template>
 			<template #tftable>
 				<TruthTable method="or" />
@@ -91,7 +91,7 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		>
 			<template #header>NOR</template>
 			<template #symbol>
-				<img class="bg-white scale-150" src="../lib/LCSReader/images/NOR.svg" />
+				<img class="bg-white scale-150" data-src="../lib/LCSReader/images/NOR.svg" />
 			</template>
 			<template #tftable>
 				<TruthTable method="nor" />
@@ -105,7 +105,7 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 		>
 			<template #header>XOR</template>
 			<template #symbol>
-				<img class="bg-white scale-150" src="../lib/LCSReader/images/XOR.svg" />
+				<img class="bg-white scale-150" data-src="../lib/LCSReader/images/XOR.svg" />
 			</template>
 			<template #tftable>
 				<TruthTable method="xor" />
@@ -116,7 +116,7 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 			<div class="flex">
 				<ProblemStack2 class="text-lg" />
 				<a href="https://exclusivearchitecture.com/03-technical-articles-IC-02-03-logic-level.html" target="_blank">
-					<img src="../assets/images/Overview_All_Gates_Updated_01.png">
+					<img data-src="../assets/images/Overview_All_Gates_Updated_01.png">
 				</a>
 			</div>
 		</section>
@@ -125,7 +125,7 @@ import ProblemStack2 from "../components/problem-stack-2.vue";
 			<div class="flex items-center">
 				<div>
 					<a href="https://en.wikipedia.org/wiki/Apollo_Guidance_Computer" target="_blank">
-						<img src="../assets/images/Aldrin_Apollo_11.jpg">
+						<img data-src="../assets/images/Aldrin_Apollo_11.jpg">
 					</a>
 				</div>
 				<div>

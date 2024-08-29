@@ -90,14 +90,14 @@
 					</ul>
 				</div>
 				<div class="fragment" @click="open_modal">
-					<img ref="vNCImg" src="../assets/images/BFoCM-von-neumann-computer.svg" />
+					<img ref="vNCImg" data-src="../assets/images/BFoCM-von-neumann-computer.svg" />
 				</div>
 			</div>
 		</section>
 		<section data-auto-animate data-auto-animate-id="three">
 			<h3>von Neumann Computer</h3>
 			<div class="flex flex-col items-center">
-				<img src="../assets/images/BFoCM-von-neumann-computer-anatomy.svg">
+				<img data-src="../assets/images/BFoCM-von-neumann-computer-anatomy.svg">
 				<ul class="text-3xl">
 					<li class="fragment"><span class="strong">Instructions</span> coded as binary data</li>
 					<li class="fragment"><span class="strong">Program Counter</span>, or PC, a special register, stores the address of the instruction to be executed</li>
@@ -108,7 +108,7 @@
 		<section data-auto-animate data-auto-animate-id="three">
 			<h3>von Neumann Computer</h3>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-von-neumann-computer-loop.svg">
+				<img data-src="../assets/images/BFoCM-von-neumann-computer-loop.svg">
 			</div>
 			<div class="text-3xl text-left">
 				<div class="fragment mt-6">Instructions are the fundamental unit of work.</div>

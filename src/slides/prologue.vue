@@ -1,30 +1,30 @@
 <template>
 	<section>
 		<section>
-			<h2>Brief History of the Digital<br/>Programmable Machines</h2>
+			<h2>A Programmer's View of the Digital Evolution</h2>
 		</section>
 		<section>
 			<h3>Quick Survey: When Were You Born</h3>
 			<ul>
-				<li class="fragment">~1981</li>
+				<li class="fragment">~1980</li>
 				<li class="fragment">1980~1984</li>
 				<li class="fragment">1985~1989</li>
 				<li class="fragment">1990~1994</li>
 				<li class="fragment">1995~1999</li>
-				<li class="fragment">2000s~</li>
+				<li class="fragment">2000~</li>
 			</ul>
 		</section>
 		<section>
 			<h3>When You Try to Learn Programming</h3>
 			<ul>
-				<li>Weird syntaxes and code structures</li>
-				<li>Strange concepts like stack / heap / threads</li>
-				<li>What could be done with a programming language</li>
-				<li>How to improve programming skills</li>
-				<li>How to learn other languages fast</li>
-				<li>And why some languages look the same</li>
-				<li>What happens underneath</li>
-				<li>Should I learn Linux and command line tools</li>
+				<li class="fragment">Weird syntaxes and code structures</li>
+				<li class="fragment">Strange concepts like stack / heap / thread</li>
+				<li class="fragment">What could be done with a programming language</li>
+				<li class="fragment">How to improve programming skills</li>
+				<li class="fragment">How to learn other languages fast</li>
+				<li class="fragment">And why some languages look similar to each other</li>
+				<li class="fragment">What happens underneath</li>
+				<li class="fragment">Should I learn Linux and command line tools</li>
 			</ul>
 		</section>
 		<section>

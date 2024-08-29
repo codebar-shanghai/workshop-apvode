@@ -12,13 +12,13 @@
 		<section>
 			<h3>Languages Influenced by C</h3>
 			<div class="lang icon-container flex justify-center">
-				<img v-for="i in LANG_ICONS" :src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${i}`" />
+				<img v-for="i in LANG_ICONS" :data-src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${i}`" />
 			</div>
 		</section>
 		<section>
 			<h3>Notable Softwares Developed in C</h3>
 			<div class="icon-container flex justify-center">
-				<img v-for="i in NOTABLE_SW_ICONS" :src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${i}`" />
+				<img v-for="i in NOTABLE_SW_ICONS" :data-src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${i}`" />
 			</div>
 		</section>
 		<section>
@@ -60,7 +60,7 @@
 		<section data-auto-animate>
 			<h3>Preprocessor</h3>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-compile-c-preprocessor.svg" />
+				<img data-src="../assets/images/BFoCM-compile-c-preprocessor.svg" />
 			</div>
 		</section>
 		<section data-auto-animate>
@@ -104,7 +104,7 @@
 		<section data-auto-animate data-auto-animate-restart>
 			<h3>Compilation</h3>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-compile-c-compiler.svg" />
+				<img data-src="../assets/images/BFoCM-compile-c-compiler.svg" />
 			</div>
 		</section>
 		<section>
@@ -135,12 +135,12 @@
 		<section>
 			<h3>Assembler</h3>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-compile-c-assembler.svg" />
+				<img data-src="../assets/images/BFoCM-compile-c-assembler.svg" />
 			</div>
 		</section>
 		<section>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-compile-c-linker.svg" />
+				<img data-src="../assets/images/BFoCM-compile-c-linker.svg" />
 			</div>
 		</section>
 		<section>
@@ -207,7 +207,6 @@ const CODE_I = [
 	"# // ...",
 	...tmp.slice(-6),
 ].join("\n");
-
 </script>
 
 <style scoped>

@@ -5,8 +5,13 @@ import {
 import { LogicInput } from "./LogicInput";
 import { LogicOutput } from "./LogicOutput";
 import { Gate } from "./Gate";
+import {
+	IGate,
+	ILogicInput,
+	ILogicOutput,
+} from "./Interfaces";
 
-function is_string(s: any) {
+function is_string(s: any): s is string {
 	return typeof s == "string" || s instanceof String;
 }
 
@@ -72,7 +77,7 @@ function _convert_json_to_obj<T extends CommonElement>(content: Record<string, a
 			let objectParsed = arr[i];
 			if (objectParsed == undefined)
 				break;
-			const obj = element.func(objectParsed); // todo
+			const obj = element.func(objectParsed);
 			element.target.push(obj);
 			obj.refreshNodes();
 		}
@@ -88,25 +93,22 @@ export class FileManager {
 
 	loadFile_ex(str: string | LCConfig) {
 		try {
-			const content = is_string(str) ? JSON.parse(str as string) : str;
+			const content = is_string(str) ? JSON.parse(str) : str;
 
 			_convert_json_to_obj(content, {
 				key: "logicInput",
 				target: this.simulator.logicInput,
-				func: (obj) => Object.assign(new LogicInput(this.simulator), obj),
+				func: (obj: Partial<ILogicInput>): LogicInput => new LogicInput(this.simulator, obj),
 			});
 			_convert_json_to_obj(content, {
 				key: "logicOutput",
 				target: this.simulator.logicOutput,
-				func: (obj) => Object.assign(new LogicOutput(this.simulator), obj),
+				func: (obj: Partial<ILogicOutput>): LogicOutput => new LogicOutput(this.simulator, obj),
 			});
 			_convert_json_to_obj(content, {
 				key: "gate",
 				target: this.simulator.gate,
-				func: (obj) => {
-					const gate = new Gate(this.simulator, obj?.strType);
-					return Object.assign(gate, obj);
-				},
+				func: (obj: Partial<IGate>): Gate => new Gate(this.simulator, obj),
 			});
 
 			if ("wire" in content && Array.isArray(content.wire)) {

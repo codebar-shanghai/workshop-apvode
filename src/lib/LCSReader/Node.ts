@@ -1,9 +1,10 @@
 import { Simulator } from ".";
 import { InputState } from "./Enums";
-import {
-	P5Drawable,
-	P5MouseOver,
-} from "./Interfaces";
+import { Circle } from "konva/lib/shapes/Circle";
+import { fillValue } from "./Utils";
+import { Wire } from "./Wire";
+
+type NodeUpdateCallback = (v: boolean) => void;
 
 export class NodeManager {
 	currentID: number;
@@ -15,7 +16,7 @@ export class NodeManager {
 	}
 }
 
-export class Node implements P5Drawable, P5MouseOver {
+export class Node {
 	diameter: number;
 	value: boolean;
 	posX: number;
@@ -27,10 +28,9 @@ export class Node implements P5Drawable, P5MouseOver {
 	brotherNode: Node | null;
 	id: number;
 	nodeManager: NodeManager;
-	simulator: Simulator;
+	circle: Circle;
 
 	constructor(simulator: Simulator, posX: number, posY: number, isOutput = false, value = false) {
-		this.simulator = simulator;
 		this.nodeManager = simulator.nodeManager;
 		this.diameter = 10;
 		this.value = value;
@@ -47,6 +47,24 @@ export class Node implements P5Drawable, P5MouseOver {
 
 		this.id = this.nodeManager.currentID++;
 		this.nodeManager.nodeList[this.id] = this;
+
+		const layer = simulator._layer;
+		this.circle = new Circle({
+			x: this.posX,
+			y: this.posY,
+			fill: fillValue(this.value),
+			radius: this.diameter / 2,
+			stroke: "black",
+			strokeWidth: 4,
+		});
+
+		this.circle.on("mouseover", () => {
+			this.circle.fill("#80808080");
+		});
+		this.circle.on("mouseout", () => {
+			this.circle.fill(fillValue(this.value));
+		});
+		layer.add(this.circle);
 	}
 
 	destroy() {
@@ -55,20 +73,9 @@ export class Node implements P5Drawable, P5MouseOver {
 	}
 
 	draw() {
-		const p = this.simulator._instance;
-		// fillValue(this.value);
-		p.stroke(0);
-		p.strokeWeight(4);
-		p.circle(this.posX, this.posY, this.diameter);
-
-		if (this.isMouseOver()) {
-			p.fill(128, 128);
-			p.noStroke();
-			p.circle(this.posX, this.posY, this.hitRange);
-		}
 	}
 
-	setID(newID: number) {
+	set ID(newID: number) {
 		this.nodeManager.nodeList[this.id] = undefined;
 		this.id = newID;
 		this.nodeManager.nodeList[this.id] = this;
@@ -78,42 +85,84 @@ export class Node implements P5Drawable, P5MouseOver {
 		}
 	}
 
-	setInputState(state: InputState) {
+	set InputState(state: InputState) {
 		this.inputState = state;
 	}
 
-	setBrother(brotherNode: Node) {
+	set Brother(brotherNode: Node) {
 		this.brotherNode = brotherNode;
 	}
 
-	getBrother() {
+	get Brother(): Node|null {
 		return this.brotherNode;
 	}
 
-	getValue() {
+	get Value() {
 		return this.value;
 	}
 
-	setValue(value: boolean) {
+	set Value(value: boolean) {
 		this.value = value;
+		this.circle.fill(fillValue(this.value));
+		this.circle.stroke(this.value ? fillValue(this.value) : "black");
 	}
 
 	updatePosition(posX: number, posY: number) {
 		this.posX = posX;
 		this.posY = posY;
+
+		this.circle.x(this.posX);
+		this.circle.y(this.posY);
+	}
+}
+
+export class InputNode extends Node {
+	private _callback?: NodeUpdateCallback;
+
+	constructor(simulator: Simulator, posX: number, posY: number, value = false, callback?: NodeUpdateCallback) {
+		super(simulator, posX, posY, false, value);
+
+		this._callback = callback;
 	}
 
-	isMouseOver() {
-		const p = this.simulator._instance;
-		return p.dist(p.mouseX, p.mouseY, this.posX, this.posY) < this.hitRange / 2;
+	get Value() {
+		return super.Value;
 	}
 
-	mouseClicked() {
-		if (this.isMouseOver() && (this.inputState == InputState.FREE || this.isOutput)) {
-			// TODO wiremng
-			return true;
+	set Value(value: boolean) {
+		super.Value = value;
+		if (typeof this._callback === "function") {
+			this._callback(this.value);
 		}
-		return false;
+	}
+}
+
+export class OutputNode extends Node {
+	private _subscribers: (InputNode|Wire)[];
+
+	constructor(simulator: Simulator, posX: number, posY: number, value = false) {
+		super(simulator, posX, posY, true, value);
+		this._subscribers = [];
+	}
+
+	get Value() {
+		return super.Value;
+	}
+
+	set Value(value: boolean) {
+		super.Value = value;
+
+		for (const n of this._subscribers) {
+			n.Value = value;
+		}
+	}
+
+	subscribe(n: InputNode|Wire) {
+		this._subscribers.push(n);
+	}
+
+	destroy(): void {
+		this._subscribers.length = 0;
 	}
 }
 

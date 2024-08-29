@@ -1,20 +1,9 @@
 <template>
-	<section data-auto-animate>
-		<h3>Mux (Multiplexer)</h3>
-		<div class="flex justify-center">
-			<img data-src="../../assets/images/BFoCM-mux.svg" />
-		</div>
-	</section>
 	<section data-auto-animate :id="section_id">
-		<h3>2-bit Mux</h3>
-		<div class="flex justify-center">
-			<div ref="refDivSimulator" class="canvas-container"></div>
-		</div>
-	</section>
-	<section data-auto-animate>
-		<h3>4-bit Mux</h3>
-		<div class="flex justify-center">
-			<img data-src="../../assets/images/BFoCM-4-bit-mux.svg" />
+		<h3>Counter</h3>
+		<h4>{{subtitle}}</h4>
+		<div class="w-full flex justify-center">
+			<div ref="refDivSimulator" :style="simulatorStyleObject"></div>
 		</div>
 	</section>
 </template>
@@ -23,6 +12,7 @@
 import {
 	onMounted,
 	onUnmounted,
+	reactive,
 	ref,
 	Ref,
 } from "vue";
@@ -37,15 +27,31 @@ import type {
 } from "../../lib/LCSReader/FileManager";
 import { Simulator } from "../../lib/LCSReader/index";
 
-import LCJson from "../../assets/circuits/mux.json";
+const props = defineProps({
+	section_id: String,
+	subtitle: String,
+	LCJson: Object,
+	canvas_width: {
+		type: [Number, String],
+		default: 500,
+	},
+	canvas_height: {
+		type: [Number, String],
+		default: 500,
+	}
+});
 
-const section_id = "section-mux";
+const simulatorStyleObject = reactive({
+	width: `${props.canvas_width}px`,
+	height: `${props.canvas_height}px`,
+});
+
 const refDivSimulator: Ref<HTMLDivElement | null> = ref(null);
 let simulator: Simulator | null;
 
 function load_simulator() {
 	if (simulator == null) {
-		simulator = new Simulator(refDivSimulator.value!, LCJson as LCConfig);
+		simulator = new Simulator(refDivSimulator.value!, props.LCJson as LCConfig);
 	}
 }
 
@@ -58,21 +64,14 @@ function unload_simulator() {
 
 onMounted(() => {
 	register_resource({
-		id: section_id,
+		id: props.section_id!,
 		constructor: load_simulator,
 		destructor: unload_simulator,
 	});
 });
 
 onUnmounted(() => {
-	deregister_resource(section_id);
+	deregister_resource(props.section_id!);
 });
 </script>
-
-<style scoped>
-.canvas-container {
-	width: 480px;
-	height: 160px;
-}
-</style>
 

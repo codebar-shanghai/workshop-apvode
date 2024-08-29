@@ -1,0 +1,164 @@
+{
+	"logicInput": [
+		{
+			"value": 0,
+			"posX": 37,
+			"posY": 25,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 5,
+			"offsetMouseY": 0,
+			"nodeStartID": 0,
+			"isSaved": true
+		},
+		{
+			"value": 0,
+			"posX": 37,
+			"posY": 83,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": -4,
+			"offsetMouseY": -2,
+			"nodeStartID": 1,
+			"isSaved": true
+		},
+		{
+			"value": 0,
+			"posX": 37,
+			"posY": 139,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 2,
+			"offsetMouseY": 2,
+			"nodeStartID": 2,
+			"isSaved": true
+		},
+		{
+			"value": 0,
+			"posX": 37,
+			"posY": 200,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 8,
+			"offsetMouseY": -7,
+			"nodeStartID": 3,
+			"isSaved": true
+		}
+	],
+	"logicOutput": [
+		{
+			"value": 0,
+			"posX": 366,
+			"posY": 113,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 279,
+			"offsetMouseY": 142,
+			"nodeStartID": 13,
+			"isSaved": true
+		}
+	],
+	"flipflop": [],
+	"logicClock": [],
+	"gate": [
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 109,
+			"posY": 30,
+			"isSpawned": true,
+			"offsetMouseX": 22,
+			"offsetMouseY": 59,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 4
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 109,
+			"posY": 143,
+			"isSpawned": true,
+			"offsetMouseX": 18,
+			"offsetMouseY": 172,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 7
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 209,
+			"posY": 88,
+			"isSpawned": true,
+			"offsetMouseX": 120,
+			"offsetMouseY": 117,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 10
+		}
+	],
+	"srLatch": [],
+	"wire": [
+		{
+			"startID": 0,
+			"endID": 4,
+			"endX": 109,
+			"endY": 46,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 5,
+			"endX": 113,
+			"endY": 104,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 7,
+			"endX": 112,
+			"endY": 156,
+			"width": 8
+		},
+		{
+			"startID": 3,
+			"endID": 8,
+			"endX": 110,
+			"endY": 215,
+			"width": 8
+		},
+		{
+			"startID": 6,
+			"endID": 10,
+			"endX": 249,
+			"endY": 76,
+			"width": 8
+		},
+		{
+			"startID": 9,
+			"endID": 11,
+			"endX": 244,
+			"endY": 184,
+			"width": 8
+		},
+		{
+			"startID": 12,
+			"endID": 13,
+			"endX": 351,
+			"endY": 133,
+			"width": 8
+		}
+	]
+}

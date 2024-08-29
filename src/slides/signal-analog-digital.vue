@@ -9,7 +9,11 @@ import {
 import type {
 	Ref,
 } from "vue";
-import { echarts } from "../plugins/echarts";
+
+import {
+	KonvaChart,
+	create_chart,
+} from "../lib/LineChart";
 
 import {
 	register_resource,
@@ -26,16 +30,16 @@ const refChartAnalog:   Ref<HTMLDivElement | null> = ref(null);
 const refChartDigitalI: Ref<HTMLDivElement | null> = ref(null);
 const refChartDigitalR: Ref<HTMLDivElement | null> = ref(null);
 
-let chartAnalog:   echarts.ECharts | null;
-let chartDigitalI: echarts.ECharts | null;
-let chartDigitalR: echarts.ECharts | null;
+let chartAnalog:   KonvaChart | null;
+let chartDigitalI: KonvaChart | null;
+let chartDigitalR: KonvaChart | null;
 
 let inited = false;
 
 function delete_charts() {
-	if (chartAnalog)   chartAnalog.dispose();
-	if (chartDigitalI) chartDigitalI.dispose();
-	if (chartDigitalR) chartDigitalR.dispose();
+	if (chartAnalog)   chartAnalog.stage.destroy();
+	if (chartDigitalI) chartDigitalI.stage.destroy();
+	if (chartDigitalR) chartDigitalR.stage.destroy();
 
 	chartAnalog   = null;
 	chartDigitalI = null;
@@ -49,80 +53,33 @@ function init_charts() {
 
 	inited = true;
 
-	chartAnalog = echarts.init(refChartAnalog.value!, dark_mode.value ? 'dark' : '');
-	chartAnalog.setOption({
-		title: {
-			text: 'Analog (ideal)'
-		},
-		xAxis: {
-			name: 't',
-		},
-		yAxis: {
-			name: 'V',
-		},
-		series: [
-			{
-				type: 'line',
-				data: [
-					[0,0],
-					[1,5],
-				],
-			},
-		],
-	});
+	chartAnalog   = create_chart(refChartAnalog.value!);
+	chartDigitalI = create_chart(refChartDigitalI.value!);
+	chartDigitalR = create_chart(refChartDigitalR.value!);
 
-	chartDigitalI = echarts.init(refChartDigitalI.value!, dark_mode.value ? 'dark' : '');
-	chartDigitalI.setOption({
-		title: {
-			text: 'Digital (ideal)'
-		},
-		xAxis: {
-			name: 't',
-		},
-		yAxis: {
-			name: 'V',
-		},
-		series: [
-			{
-				type: 'line',
-				data: [
-					[0,0],
-					[1,0],
-					[1,5],
-					[2,5],
-				],
-			},
-		],
-	});
+	chartAnalog.line([
+		[0,0],
+		[1,1],
+	]);
 
-	chartDigitalR = echarts.init(refChartDigitalR.value!, dark_mode.value ? 'dark' : '');
-	chartDigitalR.setOption({
-		title: {
-			text: 'Real'
-		},
-		xAxis: {
-			name: 't',
-		},
-		yAxis: {
-			name: 'V',
-		},
-		series: [
-			{
-				type: 'line',
-				data: [
-					[0,0],
-					[0.25, 1.5],
-					[0.5, 1],
-					[0.75, 1.5],
-					[1, 5],
-					[1.25, 4.8],
-					[1.5, 3],
-					[1.75, 4],
-					[2, 4.5],
-				],
-			},
-		],
-	});
+	chartDigitalI.line([
+		[0,0],
+		[0.5,0],
+		[0.5,1],
+		[1,1],
+	]);
+
+	chartDigitalR.line([
+		[0,0],
+		[1/8, 1.5/5],
+		[2/8, 1/5],
+		[3/8, 1.5/5],
+		[4/8, 5/5],
+		[5/8, 4.8/5],
+		[6/8, 3/5],
+		[7/8, 4/5],
+		[8/8, 4.5/5],
+	]);
 }
 
 onMounted(() => {

@@ -13,7 +13,7 @@
 			<highlightjs language="plaintext" :autodetect="false" code="man 3 printf" />
 			<div class="flex justify-center">
 				<a href="https://man7.org/linux/man-pages/man3/printf.3.html">
-					<img src="../assets/images/man-printf(3).png" />
+					<img data-src="../assets/images/man-printf(3).png" />
 				</a>
 			</div>
 		</section>
@@ -21,7 +21,7 @@
 			<highlightjs language="plaintext" :autodetect="false" code="man 2 open" />
 			<div class="flex justify-center">
 				<a href="https://man7.org/linux/man-pages/man2/open.2.html">
-					<img src="../assets/images/man-open(2).png" />
+					<img data-src="../assets/images/man-open(2).png" />
 				</a>
 			</div>
 		</section>
@@ -29,7 +29,7 @@
 			<highlightjs language="plaintext" :autodetect="false" code="man 4 null" />
 			<div class="flex justify-center">
 				<a href="https://man7.org/linux/man-pages/man4/null.4.html">
-					<img src="../assets/images/man-null(4).png" />
+					<img data-src="../assets/images/man-null(4).png" />
 				</a>
 			</div>
 		</section>

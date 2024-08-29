@@ -22,14 +22,14 @@
 			<h3>Java Virtural Machine</h3>
 			<h4>Another Abstraction</h4>
 			<div class="flex justify-center">
-				<img src="../assets/images/BFoCM-java-bytecode.svg" />
+				<img data-src="../assets/images/BFoCM-java-bytecode.svg" />
 			</div>
 		</section>
 		<section>
 			<h3>Languages atop the JVM</h3>
 			<div class="flex justify-evenly icon-container items-center">
 				<div v-for="i in JVM_LANGUAGE_ICONS" class="flex flex-col items-center">
-					<img :src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${i.icon}`" />
+					<img :data-src="`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${i.icon}`" />
 					<span class="text-3xl">{{i.name}}</span>
 				</div>
 			</div>
