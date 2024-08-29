@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<section>
-			<h2>A Programmer's View of Digital Evolution</h2>
+			<h2>A Programmer's View of the Digital Evolution</h2>
 		</section>
 		<section>
 			<h3>Quick Survey: When Were You Born</h3>
